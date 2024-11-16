@@ -2,7 +2,360 @@
 @tailwind components;
 @tailwind utilities;
 
+  body {
+    @apply font-sans ; 
+}
 
-@layer utilities {
-  
+.containerInicio {
+    background-image: url("/img/img-fundo-inicio.png");
+    background-size: cover;
+}
+
+@layer components {
+      .bg-custom-gradient {
+      background: linear-gradient(to right, #133ead 2%, #00154a 35%, #040041 70%);
+      }
+
+
+
+
+/* Header */
+
+
+
+    .header {
+        @apply flex justify-between text-black items-center m-0 py-[1.5%] px-[2%] bg-[#ffffff] ;
+    
+    .caixa-logo{
+        @apply w-[8%];
+    }
+    
+    .logo {
+        @apply w-full h-auto;
+    }
+
+    .menu {
+        @apply flex justify-between gap-6 items-center border-none;
+        p {
+            @apply text-2xl hover:border-b-2 hover:border-slate-900;
+        }
+    }
+
+    .loginHeader {
+        @apply flex items-center justify-center gap-12 w-[25%];
+
+        p {
+            @apply text-2xl;
+        }
+        .Icon-User{
+            @apply text-5xl text-[#151515]  cursor-pointer hover:text-[#1a3];
+        }
+        .botao {
+            @apply bg-[#1a3] py-[3%] px-[4%] rounded-[10px] text-white cursor-pointer;
+        }
+    }
+}
+
+
+
+  /* Header */
+
+
+
+
+/* Footer */
+
+
+      .footer {
+          @apply bg-white text-slate-950 gap-6 flex justify-center items-center py-[2%] px-[5%];
+
+       .img {
+          @apply w-[15%] mr-4;
+      }
+
+       h1 {
+          @apply text-3xl font-normal;
+      }
+      
+  }
+  /* Footer */
+
+      @media (min-width: 645px) and (max-width: 731px) {
+      .menu {
+             p {
+                      @apply text-[0.8rem];
+                  }
+              }
+
+      .loginHeader {
+          .botao{
+              @apply border py-0 px-5 w-full;
+               p{
+                  @apply text-[0.5em];
+          }
+      }
+           .Login-button p{
+              @apply text-[0.8em] text-white;
+              }
+      }
+  }
+
+      @media (min-width: 732px) and (max-width: 911px) {
+      .menu {
+             p {
+                      @apply text-[1rem];
+                  }
+              }
+
+      .loginHeader {
+          .botao{
+              @apply border py-0 px-5;
+               p{
+                  @apply text-[0.6em];
+          }
+      }
+           .Login-button p{
+              @apply text-[1em] text-white;
+              }
+      }
+  }
+
+
+      @media (min-width: 917px) and (max-width: 1249px) {
+      .loginHeader {
+       .botao p{
+          @apply text-[0.8em];
+          }
+      }
+  }
+
+
+/* Footer e Heder */
+
+
+
+
+
+  /* CADASTRO */
+
+
+
+.cadastro-container {
+    @apply flex h-[90vh] max-h-[120vh];
+     .conteiner-form-cad h1 {
+        @apply text-4xl text-center pb-[8%]
+    }
+  }
+
+  .cadastro-img-container {
+      @apply h-full min-w-fit;
+  }
+
+
+
+  .cadastro-img {
+      @apply w-full h-full;
+  }
+
+  .cadastro-form-container {
+      @apply flex justify-center items-center h-[100%] py-[2%] px-[5%] bg-gradient-to-r from-[#0c2f88] via-[#082770] to-[#020848] w-[100%];
+  }
+
+  .conteiner-form-cad {
+      @apply w-full px-[5%] pt-[5%] text-center text-white flex-col items-center h-fit rounded-[12px] bg-black/50;
+  }
+
+  .cadastro-form {
+      @apply flex flex-col items-center w-[100%] gap-[32px] mb-[10%];
+  }
+
+  .cadastro-row {
+      @apply flex gap-[40px] justify-center flex-row;
+  }
+
+  .cadastro-field input {
+      @apply w-full py-[2%] px-[5%] text-white text-[1.6rem] mb-[10%] bg-[rgba(255,0,0,0)] border-0 border-b-2 border-b-white;
+  }
+
+  .cadastro-button-container {
+      @apply w-full text-center;
+  }
+
+  .cadastro-button {
+      @apply px-[3%] py-[2.5%] text-white rounded-[20px] text-2xl bg-blue-500 w-[40%] bg-gradient-to-r from-[#003c97] via-[#082770] to-[#020848];
+  }
+
+  /* Login */
+
+  .cadastroGeral {
+    @apply flex h-[90vh];
+
+     .containerImg {
+    @apply h-full min-w-fit;
+
+     .img-login {
+        @apply w-full h-full;
+    }
+    }
+
+     .containerExternoForm {
+        @apply flex justify-center items-center h-[100%] py-[2%] px-[5%] bg-gradient-to-r from-[#0c2f88] via-[#082770] to-[#020848]  w-[100%];
+
+     .containerForm {
+        @apply w-full px-[5%] pt-[15%] text-center text-white flex-col items-center h-fit rounded-[12px] bg-black/50;
+
+     .form {
+        @apply flex flex-col items-center w-[100%] gap-[32px] mb-[10%];
+
+     input {
+        @apply w-[100%] py-[2%] px-[5%]  text-white text-[1.6rem] mb-[10%] bg-[rgba(255,0,0,0)] border-0 border-b-2 border-b-white;
+    }
+
+     button {
+        @apply px-[3%] py-[2.5%] text-white rounded-[20px] text-2xl bg-blue-500 w-[40%] bg-gradient-to-r from-[#003c97] via-[#082770] to-[#020848];
+                }
+            }
+        }
+    }
+    }
+
+    .linha {
+        @apply flex gap-[40px] justify-center flex-col;
+    }
+
+
+
+
+    /* --- Página Inicial ----*/
+
+    
+
+    .container-inicio {
+        @apply h-[90vh] w-[100%] animate-fade-up animate-once bg-slate-500 flex items-center  bg-cover bg-center;
+         p,h2 {
+            @apply text-[2rem] font-[400] mb-5 text-white;
+        }
+
+         span {
+            @apply bg-[#050] p-[8px] rounded-[3px];
+        }
+    
+        .txt-inicial {
+            @apply my-[0.5%] mx-[10%];
+        }
+    
+        .texto-home {
+            @apply w-[50%] text-balance;
+        }
+    
+        .botao-home {
+            @apply rounded-[12px] bg-[#1a3] py-[15px] mt-20 px-[25px] text-white cursor-pointer flex items-center;
+            
+            h2
+            {
+                @apply text-[1.4rem] mb-0;
+            }
+        }
+    }
+
+/* p1 */
+
+/* p2 */
+.container-sobre{
+    @apply flex bg-slate-950 animate-fade-up justify-center gap-1 px-[5%] py-[10%] text-center;
+
+    .txt-sobre{
+        @apply w-[60%] content-center align-middle;
+            h2{
+                @apply text-[3rem] text-[#1a3] font-bold;
+            }
+            p {
+                @apply text-[1.3rem] ml-[15%] mt-6 text-white w-[70%] text-left;
+            }
+        }
+    .img-sobre{
+        @apply content-center align-middle ;
+        .Image-Sobre {
+            @apply w-[80%] rounded;
+        }
+    }
+    }
+/* p2 */
+    
+
+    .energias-container {
+        @apply flex justify-between px-[5%] py-[8%] text-white bg-[#1a3] items-center;
+
+        .txt-energias{
+            @apply w-[35%] h-fit;
+            h2 {
+                @apply text-[2rem] font-bold text-balance mb-[2rem];
+            }
+            p {
+                @apply text-[1.2rem] text-balance;
+            }
+        }
+        .card-energias {
+            @apply bg-blue-600 px-[3%] py-[12%] rounded-[12px] w-[25%] text-white;        
+        }
+    }
+    /* p2 */
+
+
+    /* p3 */
+
+    .carbono-container
+    {
+        @apply  px-[3%] py-[10%]  bg-[#18b] text-white;
+    .txt-carbono{
+            @apply flex gap-10;
+        .img-cal{
+            @apply rounded-[10px];
+        }
+        .detalhes-carbono {
+            @apply w-[35%] mt-[2%] mr-[5%];
+                button {
+                    @apply bg-[#1a3] p-[4%] rounded-[10px] mt-10 text-white
+                }
+            }
+        }
+        h2 {
+            @apply text-[2.5rem] font-semibold ;
+        }
+        .title-calculo{
+            @apply border-b-2 pb-4 w-[100%] ;
+        }
+        p {
+            @apply text-[1rem] pt-4;
+        }
+    }
+
+.areas-container-geral {
+    @apply py-[2.5%] px-[5%] bg-[#1a3];
+    
+    .title-areas{
+        @apply text-[3rem] font-bold text-black;
+    }
+    .subTitle-areas{
+        @apply text-[1.5rem];
+    }
+    .container-areas {
+        @apply flex justify-between mt-[10%] mb-[6%] ;
+        
+        h2{
+            @apply text-[2rem]
+        }
+        
+        .card-areas{
+            @apply w-[30%] h-fit;
+                .img-card{
+                    @apply w-[100%] rounded-t-[10px]
+                }
+                .txt-card-areas{
+                    @apply py-[20%] p-[10%] rounded-b-[10px] 
+                    bg-slate-950 text-[#1a3]
+                }
+            }
+        }
+    }
 }
