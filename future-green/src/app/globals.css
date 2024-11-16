@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-  body {
-    @apply font-sans ; 
+    body {
+        @apply font-sans ; 
 }
 
 .containerInicio {
@@ -12,16 +12,10 @@
 }
 
 @layer components {
-      .bg-custom-gradient {
-      background: linear-gradient(to right, #133ead 2%, #00154a 35%, #040041 70%);
-      }
 
 
 
-
-/* Header */
-
-
+    /* Header */
 
     .header {
         @apply flex justify-between text-black items-center m-0 py-[1.5%] px-[2%] bg-[#ffffff] ;
@@ -56,9 +50,9 @@
     }
 }
 
-
-
   /* Header */
+
+
 
 
 
@@ -66,129 +60,73 @@
 /* Footer */
 
 
-      .footer {
-          @apply bg-white text-slate-950 gap-6 flex justify-center items-center py-[2%] px-[5%];
+    .footer {
+        @apply bg-white text-slate-950 gap-6 flex justify-center items-center py-[2%] px-[5%];
 
-       .img {
-          @apply w-[15%] mr-4;
-      }
+    .img {
+        @apply w-[15%] mr-4;
+    }
 
-       h1 {
-          @apply text-3xl font-normal;
-      }
-      
-  }
+    h1 {
+        @apply text-3xl font-normal;
+        }
+    }
   /* Footer */
 
-      @media (min-width: 645px) and (max-width: 731px) {
-      .menu {
-             p {
-                      @apply text-[0.8rem];
-                  }
-              }
 
-      .loginHeader {
-          .botao{
-              @apply border py-0 px-5 w-full;
-               p{
-                  @apply text-[0.5em];
-          }
-      }
-           .Login-button p{
-              @apply text-[0.8em] text-white;
-              }
-      }
-  }
+    @media (min-width: 645px) and (max-width: 731px) {
+        .menu {
+            p {
+                @apply text-[0.8rem];
+            }
+        }
 
-      @media (min-width: 732px) and (max-width: 911px) {
-      .menu {
-             p {
-                      @apply text-[1rem];
-                  }
-              }
+    .loginHeader {
+            .botao{
+                @apply border py-0 px-5 w-full;
+                p{
+                    @apply text-[0.5em];
+            }
+        }
+        .Login-button p{
+                @apply text-[0.8em] text-white;
+                }
+        }
+    }
 
-      .loginHeader {
-          .botao{
-              @apply border py-0 px-5;
-               p{
-                  @apply text-[0.6em];
-          }
-      }
-           .Login-button p{
-              @apply text-[1em] text-white;
-              }
-      }
-  }
+    @media (min-width: 732px) and (max-width: 911px) {
+        .menu {
+            p {
+                @apply text-[1rem];
+        }
+    }
+
+    .loginHeader {
+        .botao{
+            @apply border py-0 px-5;
+                p{
+                    @apply text-[0.6em];
+        }
+    }
+        .Login-button p{
+                @apply text-[1em] text-white;
+            }
+        }
+    }
 
 
-      @media (min-width: 917px) and (max-width: 1249px) {
-      .loginHeader {
-       .botao p{
-          @apply text-[0.8em];
-          }
-      }
-  }
+    @media (min-width: 917px) and (max-width: 1249px) {
+        .loginHeader {
+        .botao p{
+            @apply text-[0.8em];
+            }
+        }
+    }
 
 
 /* Footer e Heder */
 
 
-
-
-
-  /* CADASTRO */
-
-
-
-.cadastro-container {
-    @apply flex h-[90vh] max-h-[120vh];
-     .conteiner-form-cad h1 {
-        @apply text-4xl text-center pb-[8%]
-    }
-  }
-
-  .cadastro-img-container {
-      @apply h-full min-w-fit;
-  }
-
-
-
-  .cadastro-img {
-      @apply w-full h-full;
-  }
-
-  .cadastro-form-container {
-      @apply flex justify-center items-center h-[100%] py-[2%] px-[5%] bg-gradient-to-r from-[#0c2f88] via-[#082770] to-[#020848] w-[100%];
-  }
-
-  .conteiner-form-cad {
-      @apply w-full px-[5%] pt-[5%] text-center text-white flex-col items-center h-fit rounded-[12px] bg-black/50;
-  }
-
-  .cadastro-form {
-      @apply flex flex-col items-center w-[100%] gap-[32px] mb-[10%];
-  }
-
-  .cadastro-row {
-      @apply flex gap-[40px] justify-center flex-row;
-  }
-
-  .cadastro-field input {
-      @apply w-full py-[2%] px-[5%] text-white text-[1.6rem] mb-[10%] bg-[rgba(255,0,0,0)] border-0 border-b-2 border-b-white;
-  }
-
-  .cadastro-button-container {
-      @apply w-full text-center;
-  }
-
-  .cadastro-button {
-      @apply px-[3%] py-[2.5%] text-white rounded-[20px] text-2xl bg-blue-500 w-[40%] bg-gradient-to-r from-[#003c97] via-[#082770] to-[#020848];
-  }
-
-
-
-
-/* Login */
 
 /* Login */
 
@@ -233,6 +171,8 @@
 }
 
 
+
+
 /* Login */
 
 
@@ -250,18 +190,53 @@
 
 
 
+/* Integrantes */
+    
+    .sectionIntegrante{
+        @apply flex flex-col items-center w-full bg-slate-950;
+    & h1{
+        @apply text-[4rem] text-center mt-[5%] text-[#0a3] font-[600] mb-[5%]
+    }
+    & .containerIntegrante{
+        @apply w-[55%] mb-[10%];
+        & .integranteBox{
+        @apply  bg-gradient-to-r from-[#0a3] via-[#005f19] to-[#003823] shadow-lg shadow-green-700 flex rounded-[15px] mb-[10%];
+        & .imgSocial{
+            @apply w-[30%] p-[5%] rounded-[50%] mr-[10%];
+        }        
+        .infoIntegrant{
+            @apply flex flex-col justify-center;
+        & h2{
+            @apply text-[2.5rem] text-white border-dotted border-gray-900 border-b-2;
+        }
 
-    /* --- Página Inicial ----*/
+        & .Socials{
+            @apply text-6xl text-black flex flex-row gap-[4%] pt-[3%]; 
+                }
+            }
+        }
+        
+    }
+}
+
+
+/* Integrantes */
+
+
+
+
+
+/* --- Página Inicial ----*/
 
     
 
     .container-inicio {
         @apply h-[90vh] w-[100%] animate-fade-up animate-once bg-slate-500 flex items-center  bg-cover bg-center;
-         p,h2 {
-            @apply text-[2rem] font-[400] mb-5 text-white;
+            p,h2 {
+                @apply text-[2rem] font-[400] mb-5 text-white;
         }
 
-         span {
+        span {
             @apply bg-[#050] p-[8px] rounded-[3px];
         }
     
@@ -383,4 +358,138 @@
             }
         }
     }
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+    .container-inicio {
+        @apply h-[70vh];
+        .txt-inicial {
+            @apply mx-[5%];
+        }
+        .texto-home {
+            @apply w-[80%];
+        }
+        .botao-home {
+            @apply mt-10;
+            }
+        }
+    
+    .container-sobre {
+        @apply flex-col px-[3%] py-[5%];
+        .txt-sobre {
+            @apply w-full;
+        h2 {
+            @apply text-[2.5rem];
+            }
+        p {
+            @apply w-[90%] ml-0;
+            }
+        }
+        .img-sobre {
+            @apply mt-5;
+            .Image-Sobre {
+                @apply w-[90%];
+            }
+        }
+    }
+    
+    .energias-container {
+        @apply flex-col items-center;
+        .txt-energias {
+            @apply w-full text-center;
+        }
+        .card-energias {
+            @apply w-[70%] mt-5;
+            }
+        }
+    
+    .carbono-container {
+        .txt-carbono {
+            @apply flex-col;
+            .img-cal {
+                @apply w-full;
+            }
+        .detalhes-carbono {
+                @apply w-full mt-5;
+            }
+        }
+    }
+
+    .areas-container-geral {
+        .container-areas {
+            @apply flex-wrap gap-5;
+            .card-areas {
+                @apply w-[45%];
+                }
+            }
+        }
+    }
+
+@media (max-width: 578px) {
+    .container-inicio {
+        @apply flex-col h-[50vh];
+    .txt-inicial {
+        @apply mx-[3%];
+        }
+    .texto-home {
+        @apply text-[1rem];
+        }
+    .botao-home {
+        @apply text-[0.9rem] py-[8px] px-[12px];
+        }
+    }
+
+    .container-sobre {
+    .txt-sobre {
+        @apply text-center;
+        h2 {
+            @apply text-[1.8rem];
+        }
+        p {
+            @apply w-[100%] text-[1rem];
+        }
+    }
+
+    .img-sobre {
+        .Image-Sobre {
+            @apply w-[95%];
+            }
+        }
+    }
+
+    .energias-container {
+        .txt-energias {
+            @apply w-full;
+        h2 {
+            @apply text-[1.5rem];
+        }
+    }
+        .card-energias {
+            @apply w-[90%];
+        }
+    }
+
+    .carbono-container {
+        .txt-carbono {
+        .detalhes-carbono {
+            @apply w-full;
+                h2 {
+            @apply text-[1.8rem];
+                }
+            }
+        }
+    }
+
+    .areas-container-geral {
+        .title-areas {
+            @apply text-[1.8rem];
+        }
+        .card-areas {
+            @apply w-[100%];
+            }
+        }
+    } 
 }
