@@ -1,67 +1,33 @@
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
+import energiaCL from '@/../public/energiaCL.jpg';
 
-export default function cadastro() {
+export default function Cadastro() {
   return (
     <main>
-        <div className="cadastro-container">
-                <div className="cadastro-img-container">
-                    <img src="" alt="TROCAR PARA IMAGE" />
-                </div>
-
-                <div className="cadastro-form-container">
-                    <div className="conteiner-form-cad">
-                        <h1>Crie sua conta</h1>
-                        
-
-                        <form className="cadastro-form">
-                            <div className="cadastro-row">
-                                <div className="cadastro-field">
-                                    <input 
-                                        type="text" 
-                                        placeholder="CPF" 
-                                        
-                                        
-                                         
-                                        name="cpf" 
-                                    />
-                                </div>
-                                <div className="cadastro-field">
-                                    <input 
-                                        type="text" 
-                                        placeholder="Nome Completo" 
-                                         
-                                        name="nome" 
-                                    />
-                                </div>
-                            </div>
-                            <div className="cadastro-row">
-                                <div className="cadastro-field">
-                                    <input 
-                                        type="email" 
-                                        placeholder="Email" 
-                                        title="E-MAIL INVÁLIDO, use este padrão: aaaaa@aaaa.aaa.aa" 
-                                        pattern="[^@\s]+@[^@\s]+\.[^@\s]+"  
-                                         
-                                        name="email" 
-                                    />
-                                </div>
-                                <div className="cadastro-field">
-                                    <input 
-                                        type="password" 
-                                        placeholder="Senha" 
-                                        
-                                        name="senha" 
-                                    />
-                                </div>
-                            </div>
-                            
-                            <div className="cadastro-button-container">
-                                <button type="submit" style={{ width: "50%" }} className="cadastro-button">Criar Conta</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+      <div className="cadastroGeral cadastro">
+        <div className="containerImg">
+          <Image src={energiaCL} alt="Imagem de energia renovável" className="img-login" />
+        </div>
+        <div className="containerExternoForm">
+          <div className="containerForm">
+            <h1>Cadastre-se :)</h1>
+            <form className="form">
+              <div className="linha">
+                <input type="text" placeholder="Nome Completo" name="nome" />
+                <input type="email" placeholder="E-mail" name="email" />
+                <input type="password" placeholder="Senha" name="senha" />
+                <input
+                  type="password"
+                  placeholder="Confirme sua Senha"
+                  name="confirmarSenha"
+                />
+              </div>
+              <button type="submit">Cadastrar</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
-  )
+  );
 }

@@ -15,16 +15,15 @@ export default function Header() {
         </Link>
       </div>
       <nav className='menu'>
-        <p>Carbono</p>
-        <p>Integrantes</p>
-        <p>Sobre Nós</p>
+      <Link href='/carbono'><p>Carbono</p></Link>
+      <Link href='/integrantes'><p>Integrantes</p></Link>
+      <Link href='/'><p>Sobre Nós</p></Link>
       </nav>
       <div className='loginHeader'>
         <button className='botao'>
-          <p>Abra sua conta</p>
+        <Link href='/cadastro'><p>Abra sua conta</p></Link>
         </button>
-                    {/* arrumar rota do Link */}
-        <Link href={"/future-green/src/app/login/page.tsx"}><MdAccountCircle className='Icon-User'/></Link>
+        <Link href={"/login"}><MdAccountCircle className='Icon-User'/></Link>
       </div>
     </header>
   )

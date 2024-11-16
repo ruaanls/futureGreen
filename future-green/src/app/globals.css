@@ -185,43 +185,68 @@
       @apply px-[3%] py-[2.5%] text-white rounded-[20px] text-2xl bg-blue-500 w-[40%] bg-gradient-to-r from-[#003c97] via-[#082770] to-[#020848];
   }
 
-  /* Login */
 
-  .cadastroGeral {
+
+
+/* Login */
+
+/* Login */
+
+.cadastroGeral {
     @apply flex h-[90vh];
 
-     .containerImg {
-    @apply h-full min-w-fit;
+    .containerImg {
+    @apply h-full w-[40%] relative;
 
-     .img-login {
-        @apply w-full h-full;
-    }
-    }
-
-     .containerExternoForm {
-        @apply flex justify-center items-center h-[100%] py-[2%] px-[5%] bg-gradient-to-r from-[#0c2f88] via-[#082770] to-[#020848]  w-[100%];
-
-     .containerForm {
-        @apply w-full px-[5%] pt-[15%] text-center text-white flex-col items-center h-fit rounded-[12px] bg-black/50;
-
-     .form {
-        @apply flex flex-col items-center w-[100%] gap-[32px] mb-[10%];
-
-     input {
-        @apply w-[100%] py-[2%] px-[5%]  text-white text-[1.6rem] mb-[10%] bg-[rgba(255,0,0,0)] border-0 border-b-2 border-b-white;
+        .img-login {
+        @apply w-full h-full object-cover;
+        }
     }
 
-     button {
-        @apply px-[3%] py-[2.5%] text-white rounded-[20px] text-2xl bg-blue-500 w-[40%] bg-gradient-to-r from-[#003c97] via-[#082770] to-[#020848];
+    .containerExternoForm {
+        @apply flex justify-center items-center h-full py-[2%] px-[5%] bg-gradient-to-r from-[#0a3] via-[#005f19] to-[#003823] w-[60%];
+
+    .containerForm {
+        @apply px-[5%] py-[10%] text-center text-white flex-col items-center w-[90%] rounded-[12px] bg-black/50;
+
+        h1 {
+        @apply text-[2rem] pb-[50px];
+        }
+
+        .form {
+        @apply flex flex-col items-center w-full gap-[32px];
+
+        .linha {
+            @apply flex gap-[50px] justify-center flex-col;
+        }
+
+        input {
+            @apply w-full py-[2%] px-[5%] text-white text-[1.6rem] bg-transparent border-0 border-b-2 border-b-white;
+        }
+
+        button {
+            @apply px-[3%] py-[2.5%] text-white rounded-[20px] text-2xl w-[40%] bg-[#0a3];
                 }
             }
         }
     }
-    }
+}
 
-    .linha {
-        @apply flex gap-[40px] justify-center flex-col;
-    }
+
+/* Login */
+
+
+
+
+/* Cadastro */
+
+.cadastroGeral.cadastro {
+    .containerForm {
+        @apply px-[4%] py-[5%] w-[80%];
+}
+}
+
+/* Cadastro */
 
 
 

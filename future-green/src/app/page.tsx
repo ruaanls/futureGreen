@@ -68,7 +68,7 @@ export default function page() {
 
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eos eaque dolorum delectus
               eveniet, illo incidunt, placeat accusantium perferendis nostrum sequi facilis hic quam.</p>
-            <button className='botao-carbono'>Calcular minha pegada</button>
+            <button className='botao-carbono' >Calcular minha pegada</button>
           </div>
           
           
