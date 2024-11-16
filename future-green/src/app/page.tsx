@@ -1,101 +1,117 @@
-import Image from "next/image";
+import Image from 'next/image'
+import React from 'react'
 
-export default function Home() {
+import sobrenos from "../../public/sobrenos.jpg"
+import emissaoCo2 from "../../public/emissaoCarbono.webp"
+import agroSolar from "../../public/solarAgro.webp"
+
+
+export default function page() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className='pginicial-container'>
+      <div className="container-inicio " style={{ backgroundImage: "url('../../banner-energiarenov.jpg')" }}>
+        <div className='txt-inicial'>
+          <p>EcoGreen</p>
+          <h2>Utilize a  <span>tecnologia</span> para garantir um futuro mais <span>sustentável. </span>
+          </h2>
+          <p className='texto-home'>
+            Entenda como a tecnologia pode ajudar na implantação de novas fontes de energias renováveis e o que você pode fazer em relação a isso.
+          </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <button className='botao-home hover:animate-jump animate-duration-450 '>
+            <h2>Saiba Mais</h2>
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </div>
+      <div className='container-sobre'>
+        
+        <div className='txt-sobre'>
+          <h2>Quem somos nós?</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptates ipsa autem! Praesentium deleniti obcaecati delectus nobis eum, minus, reiciendis sapiente officia natus quis porro qui voluptatum at! Dicta, eos?</p>
+          <button>Integrantes</button>
+        </div>
+        <div className="img-sobre">
+          <Image src={sobrenos} alt='pessoas no celular' className='Image-Sobre'></Image>
+        </div>
+      </div>
+
+
+      
+      <div className='energias-container '>
+        <div className='txt-energias'>
+          <h2 className=''>Quais são as energias renováveis?</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam cum quia voluptates doloremque! Nulla minus rem corrupti quo doloremque consequuntur inventore consectetur natus ex. Distinctio est temporibus minus adipisci vel.</p>
+        </div>
+        
+        <div className='card-energias ' style={{ backgroundImage: "url('../../energiaSolar.jpg')" }}>
+          <h2>1.</h2>
+          <h2>Energia lorem</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div className='card-energias' style={{ backgroundImage: "url('../../energiaEolica.jpg')" }} >
+          <h2>2.</h2>
+          <h2>Energia lorem</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        
+      </div>
+
+      <div className='carbono-container'>
+        
+        <div className='txt-carbono'>
+          
+          <div className='w-[50%]'>
+              <Image src={emissaoCo2} alt='fabricas com fumaça saindo delas' className='img-cal'></Image>
+          </div>
+          <div className='detalhes-carbono pb-[2rem] ' >
+            <h2 className='title-calculo '>Calcule a sua <br /><span>pegada de carbono</span>.</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eos eaque dolorum delectus
+              eveniet, illo incidunt, placeat accusantium perferendis nostrum sequi facilis hic quam.</p>
+            <button className='botao-carbono' >Calcular minha pegada</button>
+          </div>
+          
+          
+        </div>
+        
+      </div>
+
+
+      
+      <div className='areas-container-geral'>
+        <h2 className='title-areas'>Áreas <span>impactadas</span></h2>
+        <p className='subTitle-areas'>Entenda quais as áreas que essas energias impactam</p>
+        <div className='container-areas'>
+          <div className='card-areas'>
+            <Image src={agroSolar} alt='' className='img-card'></Image>
+            <div className='txt-card-areas'>
+              <h2>Area1</h2>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            
+          </div>
+          <div className='card-areas'>
+            <Image src={agroSolar} alt='' className='img-card'></Image>
+            <div className='txt-card-areas'>
+              <h2>Area2</h2>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            
+          </div>
+          <div className='card-areas'>
+          <Image src={agroSolar} alt='' className='img-card'></Image>
+            <div className='txt-card-areas'>
+              <h2>Area3</h2>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+
+      
+    </main>
+  )
 }
