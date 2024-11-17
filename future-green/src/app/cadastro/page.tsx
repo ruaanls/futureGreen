@@ -56,7 +56,7 @@ export default function Cadastro() {
       }
       else
       {
-        setmensagemErro("LOGIN OU SENHA INVÁLIDOS");
+        setmensagemErro("CPF JÁ CADASTRADO");
         setTimeout(() => {
           window.location.reload();
         }, 2500);
@@ -93,7 +93,7 @@ export default function Cadastro() {
               
             </form>
 
-            <Link href="/cadEmpresa"><p>aaaa</p></Link>
+            <Link href="/cadEmpresa"><p>Cadastro para Empresas</p></Link>
 
           </div>
         </div>

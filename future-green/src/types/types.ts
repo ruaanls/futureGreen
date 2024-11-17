@@ -24,3 +24,11 @@ export type TipoCadastro = {
     senha:string
 }
 
+export type TipoCadastroEmpresa = {
+    cnpj:string,
+    nomeEmpresa:string,
+    razaoSocial:string,
+    senha:string
+  
+}
+
