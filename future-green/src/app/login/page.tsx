@@ -24,7 +24,7 @@ export default function Login() {
     setlogin((prevState) => ({
       ...prevState,
       [name]:value
-    }));
+    }))
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -49,7 +49,7 @@ export default function Login() {
         setdados(dadosCapturados);
         setmensagemErro(null);
         router.push("/");
-        
+        console.log(dados)
       }
       else
       {
@@ -61,7 +61,7 @@ export default function Login() {
     }
     catch(Erro)
     {
-      setmensagemErro("LOGIN OU SENHA INVÁLIDOS");
+      setmensagemErro("ERRO CONEXÃO API");
       console.error(Erro);
       setTimeout(() => {
         window.location.reload();
