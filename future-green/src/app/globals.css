@@ -18,14 +18,14 @@
     /* Header */
 
     .header {
-        @apply flex justify-between text-black items-center m-0 py-[1.5%] px-[2%] bg-[#ffffff] ;
+        @apply flex justify-between text-black items-center px-[2%] bg-[#ffffff] ;
     
     .caixa-logo{
-        @apply w-[8%];
+        @apply w-[15%] h-fit;
     }
     
     .logo {
-        @apply w-full h-auto;
+        @apply w-[100%];
     }
 
     .menu {

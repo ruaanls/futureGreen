@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 import energiaCL from '@/../public/energiaCL.jpg';
+import Link from 'next/link';
+
 
 export default function Cadastro() {
   return (
@@ -25,6 +27,7 @@ export default function Cadastro() {
               </div>
               <button type="submit">Cadastrar</button>
             </form>
+            <Link href="/cadEmpresa"><p>aaaa</p></Link>
           </div>
         </div>
       </div>
