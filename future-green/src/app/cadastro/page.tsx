@@ -2,8 +2,13 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import energiaCL from '@/../public/energiaCL.jpg';
+
+import Link from 'next/link';
+
+
 import { TipoCadastro } from '@/types/types';
 import { useRouter } from 'next/navigation';
+
 
 export default function Cadastro() {
   const router = useRouter();
@@ -87,7 +92,9 @@ export default function Cadastro() {
               <button type="submit">Cadastrar</button>
               
             </form>
-            <h1>Representa uma empresa? <button>Cadastro Empresas</button></h1>
+
+            <Link href="/cadEmpresa"><p>aaaa</p></Link>
+
           </div>
         </div>
       </div>

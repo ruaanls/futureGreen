@@ -8,8 +8,6 @@ export default function Header() {
   return (
     <header className='header'>
       <div className='caixa-logo'> 
-        {/* Arruma o tamanho da logo depois fiquei empacado nisso @ruaanls (pqp empacar em uma imagem e desanimador pqp) */}
-        {/* se pa e o tamanho dela mais slc tem q ver isso dps dx assim por enquanto */}
         <Link href='/'>
             <Image src={logo} alt='Logo' className='logo' />
         </Link>
