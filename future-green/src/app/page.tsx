@@ -6,6 +6,7 @@ import sobrenos from "../../public/sobrenos.jpg"
 import emissaoCo2 from "../../public/emissaoCarbono.webp"
 import agroSolar from "../../public/solarAgro.webp"
 import { RespostaLogin, RespostaLoginEmpresa } from '@/types/types'
+import Link from 'next/link'
 
 
 export default function page() {
@@ -37,9 +38,6 @@ export default function page() {
     <main className='pginicial-container'>
       <div className="container-inicio " style={{ backgroundImage: "url('../../banner-energiarenov.jpg')" }}>
         <div className='txt-inicial'>
-          <p>EcoGreen</p>
-          
-
           <h2>Utilize a  <span>tecnologia</span> para garantir um futuro mais <span>sustentável. </span>
           </h2>
           <p className='texto-home'>
@@ -54,9 +52,9 @@ export default function page() {
       <div className='container-sobre'>
         
         <div className='txt-sobre'>
-          <h2>Quem somos nós?</h2>
+          <h2>Somos a <span>Eco Energy</span></h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptates ipsa autem! Praesentium deleniti obcaecati delectus nobis eum, minus, reiciendis sapiente officia natus quis porro qui voluptatum at! Dicta, eos?</p>
-          <button>Integrantes</button>
+          <button><Link href={"/integrantes"} ><h1>Ir para Integrantes</h1></Link></button>
         </div>
         <div className="img-sobre">
           <Image src={sobrenos} alt='pessoas no celular' className='Image-Sobre'></Image>
@@ -67,18 +65,18 @@ export default function page() {
       
       <div className='energias-container '>
         <div className='txt-energias'>
-          <h2 className=''>Quais são as energias renováveis?</h2>
+          <h2>Quais são as <span>energias renováveis?</span></h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam cum quia voluptates doloremque! Nulla minus rem corrupti quo doloremque consequuntur inventore consectetur natus ex. Distinctio est temporibus minus adipisci vel.</p>
         </div>
         
-        <div className='card-energias ' style={{ backgroundImage: "url('../../energiaSolar.jpg')" }}>
-          <h2>1.</h2>
-          <h2>Energia lorem</h2>
+        <div className='card-energias bg-no-repeat' style={{ backgroundImage: "url('../../energiaSolar.jpg')" }}>
+          <h2 className='numero'>1.</h2>
+          <h2 className='titulo'>Energia lorem</h2>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
         </div>
-        <div className='card-energias' style={{ backgroundImage: "url('../../energiaEolica.jpg')" }} >
-          <h2>2.</h2>
-          <h2>Energia lorem</h2>
+        <div className='card-energias bg-no-repeat' style={{ backgroundImage: "url('../../energiaEolica.jpg')" }} >
+          <h2 className='numero'>2.</h2>
+          <h2 className='titulo'>Energia lorem</h2>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
         </div>
         
@@ -96,7 +94,7 @@ export default function page() {
 
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eos eaque dolorum delectus
               eveniet, illo incidunt, placeat accusantium perferendis nostrum sequi facilis hic quam.</p>
-            <button className='botao-carbono' >Calcular minha pegada</button>
+            <button className='botao-carbono' ><Link href={"/carbono"} ><h1>Calcular minha pegada</h1></Link></button>
           </div>
           
           

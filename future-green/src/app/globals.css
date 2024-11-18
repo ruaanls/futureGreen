@@ -18,10 +18,10 @@
     /* Header */
 
     .header {
-        @apply flex justify-between text-black items-center px-[2%] bg-[#ffffff] ;
+        @apply flex justify-between text-black items-center px-[1.75%] bg-[#ffffff] sticky top-0 z-[1] ;
     
     .caixa-logo{
-        @apply w-[15%] h-fit;
+        @apply w-[15%];
     }
     
     .logo {
@@ -45,7 +45,7 @@
             @apply text-5xl text-[#151515]  cursor-pointer hover:text-[#1a3];
         }
         .botao {
-            @apply bg-[#1a3] py-[3%] px-[4%] rounded-[10px] text-white cursor-pointer;
+            @apply bg-[#182FC4] py-[3%] px-[4%] rounded-[10px] text-white cursor-pointer;
         }
     }
 }
@@ -61,7 +61,7 @@
 
 
     .footer {
-        @apply bg-white text-slate-950 gap-6 flex justify-center items-center py-[2%] px-[5%];
+        @apply bg-[#182FC4] text-slate-950 gap-6 flex justify-center items-center py-[2%] px-[5%] text-white;
 
     .img {
         @apply w-[15%] mr-4;
@@ -232,51 +232,68 @@
 
     .container-inicio {
         @apply h-[90vh] w-[100%] animate-fade-up animate-once bg-slate-500 flex items-center  bg-cover bg-center;
-            p,h2 {
-                @apply text-[2rem] font-[400] mb-5 text-white;
-        }
-
-        span {
-            @apply bg-[#050] p-[8px] rounded-[3px];
-        }
-    
-        .txt-inicial {
-            @apply my-[0.5%] mx-[10%];
-        }
-    
-        .texto-home {
-            @apply w-[50%] text-balance;
-        }
-    
-        .botao-home {
-            @apply rounded-[12px] bg-[#1a3] py-[15px] mt-20 px-[25px] text-white cursor-pointer flex items-center;
-            
-            h2
-            {
-                @apply text-[1.4rem] mb-0;
+            h2 {
+                @apply text-[3.75rem] font-[400] leading-[1.8] mb-5 text-white w-[65%];
+                
             }
-        }
+
+            p{
+                @apply text-[1.4rem] text-white
+            }
+
+            span {
+                @apply bg-[#050] py-[4px] px-[12px] rounded-[3px] font-bold;
+            }
+        
+            .txt-inicial {
+                @apply my-[0.5%] mx-[10%];
+            }
+        
+            .texto-home {
+                @apply w-[50%] text-balance;
+            }
+        
+            .botao-home {
+                @apply rounded-[12px] bg-[#050] py-[15px] mt-20 text-white cursor-pointer flex items-center justify-center   w-[17%];
+                
+                h2
+                {
+                    @apply text-[1.7rem] mb-0 font-[500] ;
+                }
+            }
     }
 
 /* p1 */
 
 /* p2 */
 .container-sobre{
-    @apply flex bg-slate-950 animate-fade-up justify-center gap-1 px-[5%] py-[10%] text-center;
+    @apply flex bg-[#EBEBEB] animate-fade-up justify-center gap-[3rem] px-[8%] py-[8%] text-center;
 
     .txt-sobre{
         @apply w-[60%] content-center align-middle;
             h2{
-                @apply text-[3rem] text-[#1a3] font-bold;
+                @apply text-[5rem] text-[#45433A] font-[100] pb-[1rem]  border-b-2 border-[#45433A];
+                span
+                {
+                    @apply font-[400];
+                }
             }
             p {
-                @apply text-[1.3rem] ml-[15%] mt-6 text-white w-[70%] text-left;
+                @apply text-[1.4rem] ml-[10%] mt-6 text-[#45433a] w-[80%] text-left font-[400];
+            }
+            button
+            {
+                @apply bg-[#fff0] mt-[2rem] px-[3%] py-[2%] w-[40%] rounded-[40px] border-2 border-[#45433A];
+                h1
+                {
+                    @apply text-[1.5rem] text-[#45433a] font-[600];
+                }
             }
         }
     .img-sobre{
-        @apply content-center align-middle ;
+        @apply content-center align-middle w-[50%] ;
         .Image-Sobre {
-            @apply w-[80%] rounded;
+            @apply w-[100%] rounded;
         }
     }
     }
@@ -284,19 +301,36 @@
     
 
     .energias-container {
-        @apply flex justify-between px-[5%] py-[8%] text-white bg-[#1a3] items-center;
+        @apply flex justify-between px-[5%] py-[8%] text-white bg-[#182FC4] items-center;
 
         .txt-energias{
-            @apply w-[35%] h-fit;
+            @apply w-[40%] h-fit;
             h2 {
-                @apply text-[2rem] font-bold text-balance mb-[2rem];
+                @apply text-[4rem] font-[400] text-balance mb-[2rem];
+                span
+                {
+                    @apply font-bold;
+                }
             }
             p {
-                @apply text-[1.2rem] text-balance;
+                @apply text-[1.3rem] text-balance font-[400];
             }
         }
         .card-energias {
-            @apply bg-blue-600 px-[3%] py-[12%] rounded-[12px] w-[25%] text-white;        
+            @apply px-[3%] h-[500px] max-h-[450px] rounded-[15px] w-[27%] text-white;   
+            .numero
+            {
+                @apply text-[6rem] font-[700] ;
+            }  
+            .titulo
+            {
+                @apply text-[3.75rem] font-[500] leading-[1.2] mb-[1rem];
+            }  
+
+            p
+            {
+                @apply text-[1.3rem] font-[400];
+            }
         }
     }
     /* p2 */
@@ -306,54 +340,68 @@
 
     .carbono-container
     {
-        @apply  px-[3%] py-[10%]  bg-[#18b] text-white;
+        @apply  px-[7%] py-[8%] bg-[#007F39] text-white;
     .txt-carbono{
-            @apply flex gap-10;
+            @apply flex justify-between gap-[5rem];
         .img-cal{
-            @apply rounded-[10px];
+            @apply w-[90%] rounded-[10px];
         }
         .detalhes-carbono {
-            @apply w-[35%] mt-[2%] mr-[5%];
+            @apply w-[40%]  mr-[5%];
                 button {
-                    @apply bg-[#1a3] p-[4%] rounded-[10px] mt-10 text-white
+                    @apply bg-[#11aa3200] mt-[2rem] px-[3%] py-[3%] w-[60%] rounded-[40px] border-2 border-[#ffffff] ;
+                    h1
+                    {
+                        @apply text-[1.5rem] text-[#ffffff] font-[600];
+                    }
                 }
             }
         }
         h2 {
-            @apply text-[2.5rem] font-semibold ;
+            @apply text-[4rem] font-[400]  leading-[1.2] ;
+            span
+            {
+                @apply font-bold ;
+            }
         }
         .title-calculo{
-            @apply border-b-2 pb-4 w-[100%] ;
+            @apply border-b-2 pb-[2rem] w-[100%]  ;
         }
         p {
-            @apply text-[1rem] pt-4;
+            @apply text-[1.5rem] pt-4;
         }
+
+        
     }
 
 .areas-container-geral {
-    @apply py-[2.5%] px-[5%] bg-[#1a3];
+    @apply py-[2.5%] px-[13%] bg-[#DCDBD5] ;
     
     .title-areas{
-        @apply text-[3rem] font-bold text-black;
+        @apply text-[3rem] font-bold text-[#45433A];
     }
     .subTitle-areas{
-        @apply text-[1.5rem];
+        @apply text-[1.5rem] text-[#45433A] ;
     }
     .container-areas {
-        @apply flex justify-between mt-[10%] mb-[6%] ;
+        @apply flex justify-between my-[2rem]  ;
         
         h2{
-            @apply text-[2rem]
+            @apply text-[3rem] text-[#4C4A41] font-[500];
         }
         
+        p
+        {
+            @apply text-[#4C4A41] text-[1.4rem]
+        }
         .card-areas{
             @apply w-[30%] h-fit;
                 .img-card{
-                    @apply w-[100%] rounded-t-[10px]
+                    @apply w-[100%] rounded-t-[10px];
                 }
                 .txt-card-areas{
-                    @apply py-[20%] p-[10%] rounded-b-[10px] 
-                    bg-slate-950 text-[#1a3]
+                    @apply p-[5%] rounded-b-[10px] 
+                    bg-white text-[#1a3]
                 }
             }
         }
