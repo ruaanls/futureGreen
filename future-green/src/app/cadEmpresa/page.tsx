@@ -49,7 +49,7 @@ export default function CadastroEmpresa() {
           })
           setdados(dadosCapturados);
           setmensagemErro(null);
-          router.push("/");
+          router.push("/login");
           console.log(dados);
       }
       else

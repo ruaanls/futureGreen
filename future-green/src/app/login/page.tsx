@@ -48,8 +48,10 @@ export default function Login() {
         setlogin({login:"", senha:""});
         setdados(dadosCapturados);
         setmensagemErro(null);
+        localStorage.setItem("dadosLogin", JSON.stringify(dadosCapturados));
         router.push("/");
         console.log(dados)
+        
       }
       else
       {

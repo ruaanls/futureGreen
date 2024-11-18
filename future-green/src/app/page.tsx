@@ -1,17 +1,45 @@
+"use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import sobrenos from "../../public/sobrenos.jpg"
 import emissaoCo2 from "../../public/emissaoCarbono.webp"
 import agroSolar from "../../public/solarAgro.webp"
+import { RespostaLogin, RespostaLoginEmpresa } from '@/types/types'
 
 
 export default function page() {
+
+
+  const [dados, setDados] = useState<RespostaLogin | RespostaLoginEmpresa | null>(null);
+
+  useEffect(() => {
+    const dadosArmazenados = localStorage.getItem("dadosLogin");
+    if (dadosArmazenados) {
+      const dadosParseados = JSON.parse(dadosArmazenados);
+
+      // Verificar qual tipo foi recebido
+      if ("CPF" in dadosParseados) {
+        setDados(dadosParseados as RespostaLogin);
+      } else if ("CNPJ" in dadosParseados) {
+        setDados(dadosParseados as RespostaLoginEmpresa);
+      }
+      
+    }
+    
+
+  }, []);
+ 
+
+  
+  
   return (
     <main className='pginicial-container'>
       <div className="container-inicio " style={{ backgroundImage: "url('../../banner-energiarenov.jpg')" }}>
         <div className='txt-inicial'>
           <p>EcoGreen</p>
+          
+
           <h2>Utilize a  <span>tecnologia</span> para garantir um futuro mais <span>sustentável. </span>
           </h2>
           <p className='texto-home'>

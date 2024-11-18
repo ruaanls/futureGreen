@@ -51,7 +51,7 @@ export default function Cadastro() {
           senha:""});
         setdados(dadosCapturados);
         setmensagemErro(null);
-        router.push("/");
+        router.push("/login");
         console.log(dados);
       }
       else

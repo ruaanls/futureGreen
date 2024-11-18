@@ -32,3 +32,38 @@ export type TipoCadastroEmpresa = {
   
 }
 
+export type TipoCarbono = {
+    
+    combustivelAno:string,
+    tipoCombustivel:number,
+    energiaMensal:number,
+    temSolar:boolean,
+    cpf:string
+}
+
+export type TipoCarbonoEmpresas = {
+    cpf:string
+    combustivelAno:string,
+    tipoCombustivel:number,
+    energiaMensal:number,
+    temSolar:boolean,
+    cnpj:string,
+    pesoMedio:number,
+    raioDistancia:number,
+    numeroEntregas:number
+}
+
+export type RespostaCarbono = {
+    cpf:string
+    combustivelAno:string,
+    tipoCombustivel:number,
+    energiaMensal:number,
+    temSolar:boolean,
+    cnpj:string,
+    pesoMedio:number,
+    raioDistancia:number,
+    numeroEntregas:number,
+    totalCreditos: number,
+    totalEmissao: number
+}
+
