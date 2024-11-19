@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { RespostaCarbono, RespostaLogin, RespostaLoginEmpresa, TipoCarbonoEmpresas} from "@/types/types";
+import { RespostaCarbono, RespostaLogin, RespostaLoginEmpresa, TipoCarbonoEmpresas } from "@/types/types";
 import { useRouter } from "next/navigation";
 
 export default function Carbono() {
@@ -20,40 +20,59 @@ export default function Carbono() {
   });
 
   const [mensagemErro, setMensagemErro] = useState<string | null>(null);
-
+  const [autenticado, setAutenticado] = useState(false); 
+  const [cpf, setcpf] = useState<string>();
+  const [cnpj, setcnpj] = useState<string>();
+  
   useEffect(() => {
     const dadosArmazenados = localStorage.getItem("dadosLogin");
-
+  
     if (dadosArmazenados) {
       const dadosParseados = JSON.parse(dadosArmazenados);
-
-      // Verificar se o objeto possui a propriedade 'Tabela'
-      if ('Tabela' in dadosParseados) {
-        setDados(dadosParseados as RespostaLoginEmpresa | RespostaLogin); // Tipo correto quando existe a propriedade 'Tabela'
+      let autenticadoLocal = false;
+      let cpfLocal = "";
+      let cnpjLocal = "";
+  
+      if ("Tabela" in dadosParseados) {
+        setDados(dadosParseados as RespostaLoginEmpresa | RespostaLogin);
+  
+        if ((dadosParseados as RespostaLogin).CPF) {
+          autenticadoLocal = true;
+          cpfLocal = (dadosParseados as RespostaLogin).CPF;
+        } else if ((dadosParseados as RespostaLoginEmpresa).CNPJ) {
+          autenticadoLocal = true;
+          cnpjLocal = (dadosParseados as RespostaLoginEmpresa).CNPJ;
+        }
       } else {
-        setDados(dadosParseados as RespostaCarbono); // Caso contrário, é um RespostaCarbono
+        setDados(dadosParseados as RespostaCarbono);
       }
-
-      // Verificar e obter cpf/cnpj do localStorage e adicionar ao formData
-      const cpf = localStorage.getItem("cpf");
-      const cnpj = localStorage.getItem("cnpj");
-
-      if (cpf) {
+  
+      if (autenticadoLocal) {
+        setAutenticado(true);
+        setcpf(cpfLocal);
+        setcnpj(cnpjLocal);
         setFormData((prevData) => ({
           ...prevData,
-          cpf: cpf, // Atribuindo o CPF ao formData
+          cpf: cpfLocal,
+          cnpj: cnpjLocal,
         }));
+      } else {
+        
+        setMensagemErro("Você precisa estar logado para acessar esta página.");
+        setTimeout(() => {
+          router.push("/login");
+        }, 2500);
       }
-
-      if (cnpj) {
-        setFormData((prevData) => ({
-          ...prevData,
-          cnpj: cnpj, // Atribuindo o CNPJ ao formData
-        }));
-      }
+    } else {
+      
+      setMensagemErro("Você precisa estar logado para acessar esta página.");
+      setTimeout(() => {
+        router.push("/login");
+      }, 2500);
     }
-  }, []);
-
+  }, [router]);
+  
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -87,9 +106,9 @@ export default function Carbono() {
           cpf: "",
         });
 
-        setDados(dadosCapturados); // Atualizando os dados com a resposta
+        setDados(dadosCapturados);
         setMensagemErro(null);
-        router.push("/login");
+        
       } else {
         setMensagemErro("CNPJ JÁ CADASTRADO");
         setTimeout(() => {
@@ -107,14 +126,111 @@ export default function Carbono() {
 
   return (
     <div className="bg-gray-200 min-h-screen flex items-center justify-center">
-  <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl">
-    <h1 className="text-2xl font-bold text-blue-800 mb-6 text-center">
-      Formulário de Dados
-    </h1>
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl">
+        <h1 className="text-2xl font-bold text-blue-800 mb-6 text-center">
+          Calculadora de Carbono
+        </h1>
 
-    {dados && "Tabela" in dados && dados.Tabela === "T_EMPRESA" ? (
-      <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
-        <div className="col-span-2">
+        {autenticado ? (
+          dados && "Tabela" in dados && dados.Tabela === "T_EMPRESA" ? (
+            <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
+                <div className="col-span-2">
+                  <label className="block font-medium mb-1">Combustível Ano:</label>
+                  <input
+                    type="text"
+                    name="combustivelAno"
+                    value={formData.combustivelAno}
+                    onChange={handleChange}
+                    className="w-full border-gray-300 rounded-md shadow-sm"
+                  />
+                </div>
+                <div>
+                  <label className="block font-medium mb-1">Tipo de Combustível:</label>
+                  <select
+                    name="tipoCombustivel"
+                    value={formData.tipoCombustivel}
+                    onChange={handleChange}
+                    className="w-full border-gray-300 rounded-md shadow-sm"
+                  >
+                    <option value={0}>Selecione</option>
+                    <option value={1}>Diesel</option>
+                    <option value={2}>Gasolina</option>
+                    <option value={3}>Etanol</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block font-medium mb-1">Energia Mensal:</label>
+                  <input
+                    type="text"
+                    name="energiaMensal"
+                    value={formData.energiaMensal}
+                    onChange={handleChange}
+                    className="w-full border-gray-300 rounded-md shadow-sm"
+                  />
+                </div>
+                <div>
+                  <label className="block font-medium mb-1">Tem Solar?</label>
+                  <div className="flex items-center space-x-4">
+                    <label className="flex items-center">
+                      <input
+                        type="radio"
+                        name="temSolar"
+                        value="sim"
+                        checked={formData.temSolar === true}
+                        onChange={handleChange}
+                        className="mr-2"
+                      />
+                      Sim
+                    </label>
+                    <label className="flex items-center">
+                      <input
+                        type="radio"
+                        name="temSolar"
+                        value="nao"
+                        checked={formData.temSolar === false}
+                        onChange={handleChange}
+                        className="mr-2"
+                      />
+                      Não
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <label className="block font-medium mb-1">Peso Médio:</label>
+                  <input
+                    type="number"
+                    name="pesoMedio"
+                    value={formData.pesoMedio}
+                    onChange={handleChange}
+                    className="w-full border-gray-300 rounded-md shadow-sm"
+                  />
+                </div>
+                <div>
+                  <label className="block font-medium mb-1">Raio de Distância:</label>
+                  <select
+                    name="raioDistancia"
+                    value={formData.raioDistancia}
+                    onChange={handleChange}
+                    className="w-full border-gray-300 rounded-md shadow-sm"
+                  >
+                    <option value={50}>Até 50km</option>
+                    <option value={300}>Até 300km</option>
+                    <option value={1000}>Até 1000km</option>
+                    <option value={2000}>Até 2000km</option>
+                  </select>
+                </div>
+                <div className="col-span-2 text-center">
+                  <button
+                    type="submit"
+                    className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-600"
+                  >
+                    Enviar
+                  </button>
+                </div>
+            </form>
+          ) : (
+            <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
+        <div>
           <label className="block font-medium mb-1">Combustível Ano:</label>
           <input
             type="text"
@@ -141,7 +257,7 @@ export default function Carbono() {
         <div>
           <label className="block font-medium mb-1">Energia Mensal:</label>
           <input
-            type="text"
+            type="number"
             name="energiaMensal"
             value={formData.energiaMensal}
             onChange={handleChange}
@@ -175,30 +291,6 @@ export default function Carbono() {
             </label>
           </div>
         </div>
-        <div>
-          <label className="block font-medium mb-1">Peso Médio:</label>
-          <input
-            type="number"
-            name="pesoMedio"
-            value={formData.pesoMedio}
-            onChange={handleChange}
-            className="w-full border-gray-300 rounded-md shadow-sm"
-          />
-        </div>
-        <div>
-          <label className="block font-medium mb-1">Raio de Distância:</label>
-          <select
-            name="raioDistancia"
-            value={formData.raioDistancia}
-            onChange={handleChange}
-            className="w-full border-gray-300 rounded-md shadow-sm"
-          >
-            <option value={50}>Até 50km</option>
-            <option value={300}>Até 300km</option>
-            <option value={1000}>Até 1000km</option>
-            <option value={2000}>Até 2000km</option>
-          </select>
-        </div>
         <div className="col-span-2 text-center">
           <button
             type="submit"
@@ -207,98 +299,20 @@ export default function Carbono() {
             Enviar
           </button>
         </div>
-      </form>
-    ) : (
-      <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
-        <div>
-          <label className="block font-medium mb-1">Combustível Ano:</label>
-          <input
-            type="text"
-            name="combustivelAno"
-            value={formData.combustivelAno}
-            onChange={handleChange}
-            className="w-full border-gray-300 rounded-md shadow-sm"
-          />
+        {dados && (dados as RespostaCarbono).totalCreditos !== undefined && (dados as RespostaCarbono).totalEmissao !== undefined && (
+        <h1 className="text-lg font-medium text-gray-700 mt-4">
+          Total de Créditos: {(dados as RespostaCarbono).totalCreditos.toFixed(2)} | Emissão de Carbono:{" "}
+          {(dados as RespostaCarbono).totalEmissao.toFixed(2)}
+        </h1>
+        )}
+        {mensagemErro && (
+        <p className="text-red-500 font-medium mt-4">{mensagemErro}</p>
+        )}
+      </form>)
+          ) : (
+            <p className="text-red-500 font-medium text-center">{mensagemErro}</p>
+          )}
         </div>
-        <div>
-          <label className="block font-medium mb-1">Tipo de Combustível:</label>
-          <select
-            name="tipoCombustivel"
-            value={formData.tipoCombustivel}
-            onChange={handleChange}
-            className="w-full border-gray-300 rounded-md shadow-sm"
-          >
-            <option value={0}>Selecione</option>
-            <option value={1}>Diesel</option>
-            <option value={2}>Gasolina</option>
-            <option value={3}>Etanol</option>
-          </select>
-        </div>
-        <div>
-          <label className="block font-medium mb-1">Energia Mensal:</label>
-          <input
-            type="number"
-            name="energiaMensal"
-            value={formData.energiaMensal}
-            onChange={handleChange}
-            className="w-full border-gray-300 rounded-md shadow-sm"
-          />
-        </div>
-        <div>
-          <label className="block font-medium mb-1">Tem Solar?</label>
-          <div className="flex items-center space-x-4">
-            <label className="flex items-center">
-              <input
-                type="radio"
-                name="temSolar"
-                value="sim"
-                checked={formData.temSolar === true}
-                onChange={handleChange}
-                className="mr-2"
-              />
-              Sim
-            </label>
-            <label className="flex items-center">
-              <input
-                type="radio"
-                name="temSolar"
-                value="nao"
-                checked={formData.temSolar === false}
-                onChange={handleChange}
-                className="mr-2"
-              />
-              Não
-            </label>
-          </div>
-        </div>
-        <div className="col-span-2 text-center">
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-600"
-          >
-            Enviar
-          </button>
-        </div>
-      </form>
-    )}
-
-    {dados && (dados as RespostaCarbono).totalCreditos !== undefined && (dados as RespostaCarbono).totalEmissao !== undefined && (
-      <h1 className="text-lg font-medium text-gray-700 mt-4">
-        Total de Créditos: {(dados as RespostaCarbono).totalCreditos.toFixed(2)} | Emissão de Carbono:{" "}
-        {(dados as RespostaCarbono).totalEmissao.toFixed(2)}
-      </h1>
-    )}
-
-    {mensagemErro && (
-      <p className="text-red-500 font-medium mt-4">{mensagemErro}</p>
-    )}
-  </div>
-</div>
-
+    </div>
   );
 }
-
-
-
-
-
