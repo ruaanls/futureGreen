@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+*
+{
+    scroll-behavior: smooth;
+}
+
     body {
         @apply font-sans ; 
-}
+    }
 
 .containerInicio {
     background-image: url("/img/img-fundo-inicio.png");
@@ -175,6 +180,16 @@
 
 /* Login */
 
+/* CARBONO */ 
+
+.fundoCarbono
+{
+    @apply bg-red-400 h-[90vh] p-[10%] flex flex-col justify-center items-center;
+    .formulario-container
+    {
+        @apply flex flex-col
+    }
+}
 
 
 
@@ -255,7 +270,10 @@
         
             .botao-home {
                 @apply rounded-[12px] bg-[#050] py-[15px] mt-20 text-white cursor-pointer flex items-center justify-center   w-[17%];
-                
+                a
+                {
+                    @apply w-[100%] flex justify-center;
+                }
                 h2
                 {
                     @apply text-[1.7rem] mb-0 font-[500] ;

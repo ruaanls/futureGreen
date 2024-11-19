@@ -44,16 +44,16 @@ export default function page() {
             Entenda como a tecnologia pode ajudar na implantação de novas fontes de energias renováveis e o que você pode fazer em relação a isso.
           </p>
 
-          <button className='botao-home hover:animate-jump animate-duration-450 '>
-            <h2>Saiba Mais</h2>
+          <button className='botao-home hover:animate-jump animate-duration-250 '>
+            <Link href="#energias"><h2>Saiba Mais</h2></Link>
           </button>
         </div>
       </div>
-      <div className='container-sobre'>
+      <div className='container-sobre' id='sobreNos'>
         
         <div className='txt-sobre'>
           <h2>Somos a <span>Eco Energy</span></h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptates ipsa autem! Praesentium deleniti obcaecati delectus nobis eum, minus, reiciendis sapiente officia natus quis porro qui voluptatum at! Dicta, eos?</p>
+          <p>A EcoEnergy é uma startup inovadora que une tecnologia de ponta com soluções em energias renováveis para transformar o futuro da energia. A startup busca capacitar empresas e residências a adotarem práticas mais verdes Com a EcoEnergy, a transição para um futuro mais sustentável é mais acessível e eficiente.</p>
           <button><Link href={"/integrantes"} ><h1>Ir para Integrantes</h1></Link></button>
         </div>
         <div className="img-sobre">
@@ -63,21 +63,21 @@ export default function page() {
 
 
       
-      <div className='energias-container '>
+      <div className='energias-container ' id='energias'>
         <div className='txt-energias'>
           <h2>Quais são as <span>energias renováveis?</span></h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam cum quia voluptates doloremque! Nulla minus rem corrupti quo doloremque consequuntur inventore consectetur natus ex. Distinctio est temporibus minus adipisci vel.</p>
+          <p>Veja ao lado quais são as energias renováveis que trabalhamos em nossos projetos. Entender quais são as principais energias renováveis é o primeiro passo para um futuro mais sustentável.</p>
         </div>
         
         <div className='card-energias bg-no-repeat' style={{ backgroundImage: "url('../../energiaSolar.jpg')" }}>
           <h2 className='numero'>1.</h2>
-          <h2 className='titulo'>Energia lorem</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          <h2 className='titulo'>Energia Solar</h2>
+          <p>A energia solar é uma fonte limpa e renovável que utiliza a luz do sol para gerar eletricidade. </p>
         </div>
         <div className='card-energias bg-no-repeat' style={{ backgroundImage: "url('../../energiaEolica.jpg')" }} >
           <h2 className='numero'>2.</h2>
-          <h2 className='titulo'>Energia lorem</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          <h2 className='titulo'>Energia Eólica</h2>
+          <p>A energia eólica é uma fonte limpa, renovável  gerada a partir do vento, utilizando turbinas para converter o movimento do ar em eletricidade.</p>
         </div>
         
       </div>
@@ -92,8 +92,7 @@ export default function page() {
           <div className='detalhes-carbono pb-[2rem] ' >
             <h2 className='title-calculo '>Calcule a sua <br /><span>pegada de carbono</span>.</h2>
 
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eos eaque dolorum delectus
-              eveniet, illo incidunt, placeat accusantium perferendis nostrum sequi facilis hic quam.</p>
+            <p>Você sabia que suas atividades diárias impactam o meio ambiente? Com a nossa Calculadora de Carbono, você pode descobrir a quantidade de CO2 que você está emitindo. É simples, rápido e essencial para ajudar você a entender como suas escolhas impactam o planeta. Calcule agora e comece a adotar práticas mais sustentáveis </p>
             <button className='botao-carbono' ><Link href={"/carbono"} ><h1>Calcular minha pegada</h1></Link></button>
           </div>
           
@@ -106,12 +105,12 @@ export default function page() {
       
       <div className='areas-container-geral'>
         <h2 className='title-areas'>Áreas <span>impactadas</span></h2>
-        <p className='subTitle-areas'>Entenda quais as áreas que essas energias impactam</p>
+        <p className='subTitle-areas'>Entenda quais das  principais áreas a energia renovável impacta.</p>
         <div className='container-areas'>
           <div className='card-areas'>
             <Image src={agroSolar} alt='' className='img-card'></Image>
             <div className='txt-card-areas'>
-              <h2>Area1</h2>
+              <h2>Agronegócio</h2>
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
             </div>
             
@@ -119,7 +118,7 @@ export default function page() {
           <div className='card-areas'>
             <Image src={agroSolar} alt='' className='img-card'></Image>
             <div className='txt-card-areas'>
-              <h2>Area2</h2>
+              <h2>Automóveis</h2>
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
             </div>
             
@@ -127,7 +126,7 @@ export default function page() {
           <div className='card-areas'>
           <Image src={agroSolar} alt='' className='img-card'></Image>
             <div className='txt-card-areas'>
-              <h2>Area3</h2>
+              <h2>Sistemas</h2>
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
             </div>
             

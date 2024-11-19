@@ -49,7 +49,7 @@ export default function Header() {
         <Link href="/integrantes">
           <p>Integrantes</p>
         </Link>
-        <Link href="/">
+        <Link href="#sobreNos">
           <p>Sobre Nós</p>
         </Link>
       </nav>

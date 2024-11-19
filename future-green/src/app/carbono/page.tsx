@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { RespostaLogin, RespostaLoginEmpresa} from "@/types/types";
+import { RespostaCarbono, RespostaLogin, RespostaLoginEmpresa, TipoCarbonoEmpresas} from "@/types/types";
 import { useRouter } from "next/navigation";
 
 export default function Carbono() {
@@ -106,214 +106,199 @@ export default function Carbono() {
   };
 
   return (
-    <div>
-      <h1>Formulário de Dados</h1>
+    <div className="bg-gray-200 min-h-screen flex items-center justify-center">
+  <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl">
+    <h1 className="text-2xl font-bold text-blue-800 mb-6 text-center">
+      Formulário de Dados
+    </h1>
 
-      {/* Verificar se os dados têm TABELA como T_EMPRESA */}
-      {dados && 'Tabela' in dados && dados.Tabela === "T_EMPRESA" ? (
-        // Formulário para T_EMPRESA
-        <form onSubmit={handleSubmit}>
-          <label>
-            Combustível Ano:
-            <input
-              type="text"
-              name="combustivelAno"
-              value={formData.combustivelAno}
-              onChange={handleChange}
-            />
-          </label>
+    {dados && "Tabela" in dados && dados.Tabela === "T_EMPRESA" ? (
+      <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
+        <div className="col-span-2">
+          <label className="block font-medium mb-1">Combustível Ano:</label>
+          <input
+            type="text"
+            name="combustivelAno"
+            value={formData.combustivelAno}
+            onChange={handleChange}
+            className="w-full border-gray-300 rounded-md shadow-sm"
+          />
+        </div>
+        <div>
+          <label className="block font-medium mb-1">Tipo de Combustível:</label>
+          <select
+            name="tipoCombustivel"
+            value={formData.tipoCombustivel}
+            onChange={handleChange}
+            className="w-full border-gray-300 rounded-md shadow-sm"
+          >
+            <option value={0}>Selecione</option>
+            <option value={1}>Diesel</option>
+            <option value={2}>Gasolina</option>
+            <option value={3}>Etanol</option>
+          </select>
+        </div>
+        <div>
+          <label className="block font-medium mb-1">Energia Mensal:</label>
+          <input
+            type="text"
+            name="energiaMensal"
+            value={formData.energiaMensal}
+            onChange={handleChange}
+            className="w-full border-gray-300 rounded-md shadow-sm"
+          />
+        </div>
+        <div>
+          <label className="block font-medium mb-1">Tem Solar?</label>
+          <div className="flex items-center space-x-4">
+            <label className="flex items-center">
+              <input
+                type="radio"
+                name="temSolar"
+                value="sim"
+                checked={formData.temSolar === true}
+                onChange={handleChange}
+                className="mr-2"
+              />
+              Sim
+            </label>
+            <label className="flex items-center">
+              <input
+                type="radio"
+                name="temSolar"
+                value="nao"
+                checked={formData.temSolar === false}
+                onChange={handleChange}
+                className="mr-2"
+              />
+              Não
+            </label>
+          </div>
+        </div>
+        <div>
+          <label className="block font-medium mb-1">Peso Médio:</label>
+          <input
+            type="number"
+            name="pesoMedio"
+            value={formData.pesoMedio}
+            onChange={handleChange}
+            className="w-full border-gray-300 rounded-md shadow-sm"
+          />
+        </div>
+        <div>
+          <label className="block font-medium mb-1">Raio de Distância:</label>
+          <select
+            name="raioDistancia"
+            value={formData.raioDistancia}
+            onChange={handleChange}
+            className="w-full border-gray-300 rounded-md shadow-sm"
+          >
+            <option value={50}>Até 50km</option>
+            <option value={300}>Até 300km</option>
+            <option value={1000}>Até 1000km</option>
+            <option value={2000}>Até 2000km</option>
+          </select>
+        </div>
+        <div className="col-span-2 text-center">
+          <button
+            type="submit"
+            className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-600"
+          >
+            Enviar
+          </button>
+        </div>
+      </form>
+    ) : (
+      <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block font-medium mb-1">Combustível Ano:</label>
+          <input
+            type="text"
+            name="combustivelAno"
+            value={formData.combustivelAno}
+            onChange={handleChange}
+            className="w-full border-gray-300 rounded-md shadow-sm"
+          />
+        </div>
+        <div>
+          <label className="block font-medium mb-1">Tipo de Combustível:</label>
+          <select
+            name="tipoCombustivel"
+            value={formData.tipoCombustivel}
+            onChange={handleChange}
+            className="w-full border-gray-300 rounded-md shadow-sm"
+          >
+            <option value={0}>Selecione</option>
+            <option value={1}>Diesel</option>
+            <option value={2}>Gasolina</option>
+            <option value={3}>Etanol</option>
+          </select>
+        </div>
+        <div>
+          <label className="block font-medium mb-1">Energia Mensal:</label>
+          <input
+            type="number"
+            name="energiaMensal"
+            value={formData.energiaMensal}
+            onChange={handleChange}
+            className="w-full border-gray-300 rounded-md shadow-sm"
+          />
+        </div>
+        <div>
+          <label className="block font-medium mb-1">Tem Solar?</label>
+          <div className="flex items-center space-x-4">
+            <label className="flex items-center">
+              <input
+                type="radio"
+                name="temSolar"
+                value="sim"
+                checked={formData.temSolar === true}
+                onChange={handleChange}
+                className="mr-2"
+              />
+              Sim
+            </label>
+            <label className="flex items-center">
+              <input
+                type="radio"
+                name="temSolar"
+                value="nao"
+                checked={formData.temSolar === false}
+                onChange={handleChange}
+                className="mr-2"
+              />
+              Não
+            </label>
+          </div>
+        </div>
+        <div className="col-span-2 text-center">
+          <button
+            type="submit"
+            className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-600"
+          >
+            Enviar
+          </button>
+        </div>
+      </form>
+    )}
 
-          <label>
-            Tipo de Combustível:
-            <select
-              name="tipoCombustivel"
-              value={formData.tipoCombustivel}
-              onChange={handleChange}
-            >
-              <option value={0}>Selecione</option>
-              <option value={1}>Diesel</option>
-              <option value={2}>Gasolina</option>
-              <option value={3}>Etanol</option>
-            </select>
-          </label>
+    {dados && (dados as RespostaCarbono).totalCreditos !== undefined && (dados as RespostaCarbono).totalEmissao !== undefined && (
+      <h1 className="text-lg font-medium text-gray-700 mt-4">
+        Total de Créditos: {(dados as RespostaCarbono).totalCreditos.toFixed(2)} | Emissão de Carbono:{" "}
+        {(dados as RespostaCarbono).totalEmissao.toFixed(2)}
+      </h1>
+    )}
 
-          <label>
-            Energia Mensal:
-            <input
-              type="text" 
-              name="energiaMensal"
-              value={formData.energiaMensal}
-              onChange={handleChange}
-            />
-          </label>
+    {mensagemErro && (
+      <p className="text-red-500 font-medium mt-4">{mensagemErro}</p>
+    )}
+  </div>
+</div>
 
-          <label>
-            Tem Solar?
-            <input
-              type="radio"
-              name="temSolar"
-              value="sim"
-              checked={formData.temSolar === true}
-              onChange={handleChange}
-            />
-            Sim
-            <input
-              type="radio"
-              name="temSolar"
-              value="nao"
-              checked={formData.temSolar === false}
-              onChange={handleChange}
-            />
-            Não
-          </label>
-
-          <label>
-            Peso Médio:
-            <input
-              type="number"
-              name="pesoMedio"
-              value={formData.pesoMedio}
-              onChange={handleChange}
-            />
-          </label>
-
-          <label>
-            Raio de Distância:
-            <select
-              name="raioDistancia"
-              value={formData.raioDistancia}
-              onChange={handleChange}
-            >
-              <option value={50}>Até 50km</option>
-              <option value={300}>Até 300km</option>
-              <option value={1000}>Até 1000km</option>
-              <option value={2000}>Até 2000km</option>
-            </select>
-          </label>
-
-          <label>
-            Número de Entregas:
-            <select
-              name="numeroEntregas"
-              value={formData.numeroEntregas}
-              onChange={handleChange}
-            >
-              <option value={200}>Até 200 entregas</option>
-              <option value={500}>Até 500 entregas</option>
-              <option value={1000}>Até 1000 entregas</option>
-              <option value={2000}>Até 2000 entregas</option>
-            </select>
-          </label>
-
-
-          <button type="submit">Enviar</button>
-        </form>
-      ) : (
-        // Formulário para outros tipos (não T_EMPRESA)
-        <form onSubmit={handleSubmit}>
-          <label>
-            Combustível Ano:
-            <input
-              type="text"
-              name="combustivelAno"
-              value={formData.combustivelAno}
-              onChange={handleChange}
-            />
-          </label>
-
-          <label>
-            Tipo de Combustível:
-            <select
-              name="tipoCombustivel"
-              value={formData.tipoCombustivel}
-              onChange={handleChange}
-            >
-              <option value={0}>Selecione</option>
-              <option value={1}>Diesel</option>
-              <option value={2}>Gasolina</option>
-              <option value={3}>Etanol</option>
-            </select>
-          </label>
-
-          <label>
-            Energia Mensal:
-            <input
-              type="number"
-              name="energiaMensal"
-              value={formData.energiaMensal}
-              onChange={handleChange}
-            />
-          </label>
-
-          <label>
-            Tem Solar?
-            <input
-              type="radio"
-              name="temSolar"
-              value="sim"
-              checked={formData.temSolar === true}
-              onChange={handleChange}
-            />
-            Sim
-            <input
-              type="radio"
-              name="temSolar"
-              value="nao"
-              checked={formData.temSolar === false}
-              onChange={handleChange}
-            />
-            Não
-          </label>
-
-          <button type="submit">Enviar</button>
-        </form>
-      )}
-
-      {/* Verificar se os dados possuem a propriedade totalCreditos e totalEmissao */}
-      {dados && (dados as RespostaCarbono).totalCreditos !== undefined && (dados as RespostaCarbono).totalEmissao !== undefined && (
-        <h1>
-          Total de Créditos: {(dados as RespostaCarbono).totalCreditos.toFixed(2)} | Emissão de Carbono: {(dados as RespostaCarbono).totalEmissao.toFixed(2)}
-        </h1>
-      )}
-
-      {mensagemErro && <p style={{ color: "red" }}>{mensagemErro}</p>}
-    </div>
   );
 }
 
 
 
 
-export type TipoCarbono = {
-  combustivelAno: string;
-  tipoCombustivel: number;
-  energiaMensal: number;
-  temSolar: boolean;
-  cpf: string;
-};
 
-export type TipoCarbonoEmpresas = {
-  cpf: string;
-  combustivelAno: string;
-  tipoCombustivel: number;
-  energiaMensal: number;
-  temSolar: boolean;
-  cnpj: string;
-  pesoMedio: number;
-  raioDistancia: number;
-  numeroEntregas: number;
-};
-
-export type RespostaCarbono = {
-  cpf: string;
-  combustivelAno: string;
-  tipoCombustivel: number;
-  energiaMensal: number;
-  temSolar: boolean;
-  cnpj: string;
-  pesoMedio: number;
-  raioDistancia: number;
-  numeroEntregas: number;
-  totalEmissao: number;
-  totalCreditos: number;
-};
