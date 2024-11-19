@@ -51,11 +51,23 @@ export default function Carbono() {
         setAutenticado(true);
         setcpf(cpfLocal);
         setcnpj(cnpjLocal);
-        setFormData((prevData) => ({
-          ...prevData,
-          cpf: cpfLocal,
-          cnpj: cnpjLocal,
-        }));
+        if(cpfLocal)
+        {
+          setFormData((prevData) => ({
+            ...prevData,
+            cpf: cpfLocal,
+          }));
+          
+        }
+        if(cnpjLocal)
+        {
+          setFormData((prevData) => ({
+            ...prevData,
+            cnpj: cnpjLocal,
+          }));
+          
+        }
+        
       } else {
         
         setMensagemErro("Você precisa estar logado para acessar esta página.");
@@ -84,7 +96,7 @@ export default function Carbono() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const resposta = await fetch("http://localhost:8080/apiJava/cadastroEmpresa", {
+      const resposta = await fetch("http://localhost:8080/apiJava/calculaCarbono", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -110,7 +122,7 @@ export default function Carbono() {
         setMensagemErro(null);
         
       } else {
-        setMensagemErro("CNPJ JÁ CADASTRADO");
+        setMensagemErro("CPF OU CNPJ NÃO CAPTURADO");
         setTimeout(() => {
           window.location.reload();
         }, 2500);
@@ -301,7 +313,7 @@ export default function Carbono() {
         </div>
         {dados && (dados as RespostaCarbono).totalCreditos !== undefined && (dados as RespostaCarbono).totalEmissao !== undefined && (
         <h1 className="text-lg font-medium text-gray-700 mt-4">
-          Total de Créditos: {(dados as RespostaCarbono).totalCreditos.toFixed(2)} | Emissão de Carbono:{" "}
+          Total de Créditos: {(dados as RespostaCarbono).totalCreditos.toFixed(2)} | Emissão de Carbono:{" "}T CO²
           {(dados as RespostaCarbono).totalEmissao.toFixed(2)}
         </h1>
         )}
