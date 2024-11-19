@@ -1,16 +1,19 @@
+
+
 "use client"
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 
 import sobrenos from "../../public/sobrenos.jpg"
 import emissaoCo2 from "../../public/emissaoCarbono.webp"
-import agroSolar from "../../public/solarAgro.webp"
+import solar from "../../public/solar.jpg"
+import sisEletrico from "../../public/sisEletrico.jpg"
+import agroSus from "../../public/agroSus.jpg"
 import { RespostaLogin, RespostaLoginEmpresa } from '@/types/types'
 import Link from 'next/link'
 
 
 export default function page() {
-
 
   const [dados, setDados] = useState<RespostaLogin | RespostaLoginEmpresa | null>(null);
 
@@ -30,9 +33,6 @@ export default function page() {
     
 
   }, []);
- 
-
-  
   
   return (
     <main className='pginicial-container'>
@@ -104,38 +104,40 @@ export default function page() {
 
 
       
-      <div className='areas-container-geral'>
-        <h2 className='title-areas'>Áreas <span>impactadas</span></h2>
-        <p className='subTitle-areas'>Entenda quais as áreas que essas energias impactam</p>
-        <div className='container-areas'>
-          <div className='card-areas'>
-            <Image src={agroSolar} alt='' className='img-card'></Image>
-            <div className='txt-card-areas'>
-              <h2>Area1</h2>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-            
-          </div>
-          <div className='card-areas'>
-            <Image src={agroSolar} alt='' className='img-card'></Image>
-            <div className='txt-card-areas'>
-              <h2>Area2</h2>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-            
-          </div>
-          <div className='card-areas'>
-          <Image src={agroSolar} alt='' className='img-card'></Image>
-            <div className='txt-card-areas'>
-              <h2>Area3</h2>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-            
-          </div>
-          
+      <div className="areas-container-geral">
+  <h2 className="title-areas">Áreas <span>impactadas</span></h2>
+  <p className="subTitle-areas">Conheça os setores beneficiados pelo uso de energias renováveis</p>
+  <div className="container-areas">
+    {[
+      {
+        title: "Energia Solar",
+        description: "A energia solar utiliza a luz do sol para gerar eletricidade limpa, sustentável e acessível. Essa tecnologia inovadora é uma das alternativas mais promissoras para enfrentar as mudanças climáticas, reduzindo nossa dependência de combustíveis fósseis e promovendo um futuro mais sustentável.",
+        image: solar,
+        alt: "Sistemas de energia solar em áreas agrícolas"
+      },
+      {
+        title: "Agronegócio",
+        description: "O agronegócio está se transformando com o uso de fontes de energia renováveis, como a solar e a eólica. Essas tecnologias ajudam a reduzir custos, aumentar a eficiência e minimizar o impacto ambiental, garantindo práticas agrícolas mais sustentáveis e responsáveis.",
+        image: agroSus,
+        alt: "Plantas solares em áreas industriais"
+      },
+      {
+        title: "Sistema",
+        description: "Os sistemas elétricos modernos integram fontes renováveis, como a energia hídrica, solar e eólica, para oferecer uma eletricidade mais limpa e confiável. Essa evolução é essencial para criar redes elétricas sustentáveis que atendam às demandas do presente sem comprometer os recursos futuros.",
+        image: sisEletrico,
+        alt: "Usos diversificados de energia hídrica"
+      }
+    ].map((area, index) => (
+      <div key={index} className="card-areas">
+        <Image src={area.image} alt={area.alt} className="img-card" />
+        <div className="txt-card-areas">
+          <h2>{area.title}</h2>
+          <p>{area.description}</p>
         </div>
-        
       </div>
+    ))}
+  </div>
+</div>
 
       
     </main>

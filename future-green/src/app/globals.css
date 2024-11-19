@@ -233,7 +233,7 @@
     .container-inicio {
         @apply h-[90vh] w-[100%] animate-fade-up animate-once bg-slate-500 flex items-center  bg-cover bg-center;
             h2 {
-                @apply text-[3.75rem] font-[400] leading-[1.8] mb-5 text-white w-[65%];
+                @apply text-[2.5rem] font-[400] leading-[1.8] mb-5 text-white w-[65%];
                 
             }
 
@@ -258,7 +258,7 @@
                 
                 h2
                 {
-                    @apply text-[1.7rem] mb-0 font-[500] ;
+                    @apply text-[1.5rem] mb-0 font-[500] ;
                 }
             }
     }
@@ -272,7 +272,7 @@
     .txt-sobre{
         @apply w-[60%] content-center align-middle;
             h2{
-                @apply text-[5rem] text-[#45433A] font-[100] pb-[1rem]  border-b-2 border-[#45433A];
+                @apply text-[3rem] text-[#45433A] font-[100] pb-[1rem]  border-b-2 border-[#45433A];
                 span
                 {
                     @apply font-[400];
@@ -283,7 +283,7 @@
             }
             button
             {
-                @apply bg-[#fff0] mt-[2rem] px-[3%] py-[2%] w-[40%] rounded-[40px] border-2 border-[#45433A];
+                @apply bg-[#fff0] mt-[2rem] px-[3%] py-[4%] w-[50%] rounded-[40px] border-2 border-[#45433A];
                 h1
                 {
                     @apply text-[1.5rem] text-[#45433a] font-[600];
@@ -300,111 +300,88 @@
 /* p2 */
     
 
-    .energias-container {
-        @apply flex justify-between px-[5%] py-[8%] text-white bg-[#182FC4] items-center;
+.energias-container {
+    @apply flex justify-between px-[5%] py-[8%] text-white bg-[#1a3] items-center;
 
-        .txt-energias{
-            @apply w-[40%] h-fit;
-            h2 {
-                @apply text-[4rem] font-[400] text-balance mb-[2rem];
-                span
-                {
-                    @apply font-bold;
-                }
-            }
-            p {
-                @apply text-[1.3rem] text-balance font-[400];
-            }
-        }
-        .card-energias {
-            @apply px-[3%] h-[500px] max-h-[450px] rounded-[15px] w-[27%] text-white;   
-            .numero
-            {
-                @apply text-[6rem] font-[700] ;
-            }  
-            .titulo
-            {
-                @apply text-[3.75rem] font-[500] leading-[1.2] mb-[1rem];
-            }  
-
-            p
-            {
-                @apply text-[1.3rem] font-[400];
-            }
-        }
-    }
-    /* p2 */
-
-
-    /* p3 */
-
-    .carbono-container
-    {
-        @apply  px-[7%] py-[8%] bg-[#007F39] text-white;
-    .txt-carbono{
-            @apply flex justify-between gap-[5rem];
-        .img-cal{
-            @apply w-[90%] rounded-[10px];
-        }
-        .detalhes-carbono {
-            @apply w-[40%]  mr-[5%];
-                button {
-                    @apply bg-[#11aa3200] mt-[2rem] px-[3%] py-[3%] w-[60%] rounded-[40px] border-2 border-[#ffffff] ;
-                    h1
-                    {
-                        @apply text-[1.5rem] text-[#ffffff] font-[600];
-                    }
-                }
-            }
-        }
+    .txt-energias{
+        @apply w-[35%] h-fit;
         h2 {
-            @apply text-[4rem] font-[400]  leading-[1.2] ;
-            span
-            {
-                @apply font-bold ;
-            }
-        }
-        .title-calculo{
-            @apply border-b-2 pb-[2rem] w-[100%]  ;
+            @apply text-[2rem] font-bold text-balance mb-[2rem];
         }
         p {
-            @apply text-[1.5rem] pt-4;
+            @apply text-[1.2rem] text-balance;
         }
+    }
+    .card-energias {
+        @apply bg-blue-600 px-[3%] py-[12%] rounded-[12px] w-[25%] text-white;        
+    }
+}
+/* p2 */
 
-        
-    }
 
-.areas-container-geral {
-    @apply py-[2.5%] px-[13%] bg-[#DCDBD5] ;
-    
-    .title-areas{
-        @apply text-[3rem] font-bold text-[#45433A];
+/* p3 */
+
+.carbono-container
+{
+    @apply  px-[3%] py-[10%]  bg-[#18b] text-white;
+.txt-carbono{
+        @apply flex gap-10;
+    .img-cal{
+        @apply rounded-[10px];
     }
-    .subTitle-areas{
-        @apply text-[1.5rem] text-[#45433A] ;
-    }
-    .container-areas {
-        @apply flex justify-between my-[2rem]  ;
-        
-        h2{
-            @apply text-[3rem] text-[#4C4A41] font-[500];
-        }
-        
-        p
-        {
-            @apply text-[#4C4A41] text-[1.4rem]
-        }
-        .card-areas{
-            @apply w-[30%] h-fit;
-                .img-card{
-                    @apply w-[100%] rounded-t-[10px];
-                }
-                .txt-card-areas{
-                    @apply p-[5%] rounded-b-[10px] 
-                    bg-white text-[#1a3]
-                }
+    .detalhes-carbono {
+        @apply w-[35%] mt-[2%] mr-[5%];
+            button {
+                @apply bg-[#1a3] p-[4%] rounded-[10px] mt-10 text-white
             }
         }
+    }
+    h2 {
+        @apply text-[2.5rem] font-semibold ;
+    }
+    .title-calculo{
+        @apply border-b-2 pb-4 w-[100%] ;
+    }
+    p {
+        @apply text-[1rem] pt-4;
+    }
+}
+
+.areas-container-geral {
+    @apply py-[2.5%] px-[5%] bg-[#1a3];
+}
+
+.title-areas {
+    @apply text-[3rem] font-bold text-black;
+}
+
+.subTitle-areas {
+    @apply text-[1.5rem];
+}
+
+.container-areas {
+    @apply flex justify-between gap-6 mt-[10%] mb-[6%];
+}
+
+.card-areas {
+    @apply flex flex-col justify-start items-stretch w-[30%] bg-slate-950 text-[#1a3] rounded-[10px];
+}
+
+.img-card {
+    @apply w-full h-auto rounded-t-[10px];
+}
+
+.txt-card-areas {
+    @apply flex flex-col justify-start py-8 px-6 gap-4 h-full;
+}
+
+.txt-card-areas h2 {
+    @apply text-[2rem] text-center font-semibold;
+    }
+
+    .txt-card-areas p {
+    font-size: clamp(1rem, 1.5vw, 1.5rem); /* Mantém o texto responsivo */
+    @apply text-left;
     }
 
 @media (max-width: 1024px) {
