@@ -425,137 +425,28 @@
         }
     }
 
-@media (max-width: 1024px) {
-
-}
-
-@media (max-width: 768px) {
-    .container-inicio {
-        @apply h-[70vh];
-        .txt-inicial {
-            @apply mx-[5%];
-        }
-        .texto-home {
-            @apply w-[80%];
-        }
-        .botao-home {
-            @apply mt-10;
+    @media (max-width: 1220px){
+        .areas-container-geral {
+            .title-areas {
+                @apply text-[2rem] justify-center;
             }
-        }
-    
-    .container-sobre {
-        @apply flex-col px-[3%] py-[5%];
-        .txt-sobre {
-            @apply w-full;
-        h2 {
-            @apply text-[2.5rem];
-            }
-        p {
-            @apply w-[90%] ml-0;
-            }
-        }
-        .img-sobre {
-            @apply mt-5;
-            .Image-Sobre {
-                @apply w-[90%];
-            }
-        }
-    }
-    
-    .energias-container {
-        @apply flex-col items-center;
-        .txt-energias {
-            @apply w-full text-center;
-        }
-        .card-energias {
-            @apply w-[70%] mt-5;
-            }
-        }
-    
-    .carbono-container {
-        .txt-carbono {
-            @apply flex-col;
-            .img-cal {
-                @apply w-full;
-            }
-        .detalhes-carbono {
-                @apply w-full mt-5;
-            }
-        }
-    }
-
-    .areas-container-geral {
-        .container-areas {
-            @apply flex-wrap gap-5;
-            .card-areas {
-                @apply w-[45%];
+            .container-areas {
+                @apply flex gap-4 justify-between w-full my-[2rem] h-full;
+                
+                h3{
+                    @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
+                }
+                
+                p
+                {
+                    @apply text-left p-3 text-[#4C4A41] text-[1.3rem]
+                }
+                .card-areas{
+                    @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[800px];
+                        .img-card{
+                            @apply h-[300px] w-full rounded-t-[10px];
+                        }
+                    }
                 }
             }
-        }
     }
-
-@media (max-width: 578px) {
-    .container-inicio {
-        @apply flex-col h-[50vh];
-    .txt-inicial {
-        @apply mx-[3%];
-        }
-    .texto-home {
-        @apply text-[1rem];
-        }
-    .botao-home {
-        @apply text-[0.9rem] py-[8px] px-[12px];
-        }
-    }
-
-    .container-sobre {
-    .txt-sobre {
-        @apply text-center;
-        h2 {
-            @apply text-[1.8rem];
-        }
-        p {
-            @apply w-[100%] text-[1rem];
-        }
-    }
-
-    .img-sobre {
-        .Image-Sobre {
-            @apply w-[95%];
-            }
-        }
-    }
-
-    .energias-container {
-        .txt-energias {
-            @apply w-full;
-        h2 {
-            @apply text-[1.5rem];
-        }
-    }
-        .card-energias {
-            @apply w-[90%];
-        }
-    }
-
-    .carbono-container {
-        .txt-carbono {
-        .detalhes-carbono {
-            @apply w-full;
-                h2 {
-            @apply text-[1.8rem];
-                }
-            }
-        }
-    }
-
-    .areas-container-geral {
-        .title-areas {
-            @apply text-[1.8rem];
-        }
-        .card-areas {
-            @apply w-[100%];
-            }
-        }
-    } 
-}
