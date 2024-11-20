@@ -425,21 +425,205 @@
         }
     }
 
-@media (max-width: 1024px) {
+    @media (max-width: 1220px){
+        .areas-container-geral {
+            .title-areas {
+                @apply text-[2rem] justify-center;
+            }
+            .container-areas {
+                @apply flex gap-4 justify-between w-full my-[2rem] h-full;
+                
+                h3{
+                    @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
+                }
+                
+                p
+                {
+                    @apply text-left p-3 text-[#4C4A41] text-[1.3rem]
+                }
+                .card-areas{
+                    @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[800px];
+                        .img-card{
+                            @apply h-[300px] w-full rounded-t-[10px];
+                        }
+                    }
+                }
+            }
+    }
+    @media (max-width: 1024px) {
+        .container-inicio {
+                @apply h-[70vh] pb-[10%] px-[5];
+                .txt-inicial {
+                    @apply mx-[5%];
+                    h2 {
+                        @apply text-[2rem];
+                        }
+                    span {
+                        @apply text-[1.8rem] p-1;
+                    }
+                    p {
+                        @apply text-[1.5rem] w-full;
+                        }
+                }
+                .botao-home {
+                    @apply mt-10 w-40 mb-10;
+                    h2{
+                        @apply text-[1.5rem] w-full;
+                    }
+                    }
+                }
+            
+            .container-sobre {
+                @apply flex-col px-[3%] py-[5%];
+                .txt-sobre {
+                    @apply w-full;
+                h2 {
+                    @apply text-[2.5rem];
+                    }
+                p {
+                    @apply w-[100%] px-[10%] justify-center ml-0;
+                    }
+                }
+                .img-sobre {
+                    @apply mt-5 hidden;
+                    .Image-Sobre {
+                        @apply w-[100%] px-[10%] mb-10;
+                    }
+                }
+            }
+            .energias-container {
+                @apply flex-col items-center px-[5%];
+                .txt-energias {
+                    @apply w-full text-left;
+                    h2{
+                        @apply text-[2.1rem] w-full text-center;
+                    }
+                    p {
+                        @apply w-[100%] text-[1.5rem] text-left;
+                        }
+                }
+                .card-energias {
+                    @apply w-[100%] mt-5;
+                    }
+                }
+            
+            .carbono-container {
+                @apply flex;
+                .txt-carbono {
+                    @apply w-full flex-col;
+                    .iti{
+                        @apply w-[100%] text-center;
+                    }
+                    .caixa-carbono {
+                        @apply w-full;
+                    }
+                    .img-corbo{
+                        @apply w-full;
+                        .img-cal {
+                            @apply w-full;
+                    }
+                }
+                .detalhes-carbono {
+                        @apply w-full my-0;
+                        .title-calculo{
+                            @apply flex;
+                        }
+                        h2{
+                            @apply w-[100%] text-[3rem];
+                        }
+                        p{
+                            @apply w-[100%];
+                        }
+                        .botao-carbono{
+                            @apply w-[60%] mb-0 text-center;
+                        }
+                    }
+                }
+            }
+            .areas-container-geral {
+                .title-areas {
+                    @apply text-[2rem] justify-center;
+                }
+                .container-areas {
+                    @apply flex gap-4 justify-between my-[2rem] h-full;
+                    
+                    h3{
+                        @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
+                    }
+                    
+                    p
+                    {
+                        @apply text-left p-3 text-[#4C4A41] text-[1.3rem]
+                    }
+                    .card-areas{
+                        @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[900px];
+                            .img-card{
+                                @apply h-[300px] w-full rounded-t-[10px];
+                            }
+                        } 
+                    }
+                }
 
+            .cadastroGeral {
+    @apply flex flex-col h-[90vh];
+
+    .containerImg {
+    @apply h-full w-[40%] relative hidden lg:block;
+    
+    .img-login {
+        @apply w-full h-full object-cover;
+    }
+    }
+
+        .containerExternoForm {
+            @apply flex justify-center items-center h-full py-[2%] px-[5%] bg-gradient-to-r from-[#0a3] via-[#005f19] to-[#003823] w-full lg:w-[60%];
+    }
+
+        .containerForm {
+            @apply px-[5%] py-[10%] text-center text-white flex-col items-center w-full lg:w-[90%] rounded-[12px] bg-black/50;
+
+        h1 {
+            @apply text-[2rem] pb-[50px];
+        }
+
+            .form {
+                @apply flex flex-col items-center w-full gap-[32px];
+
+            .linha {
+                @apply flex gap-[50px] justify-center flex-col;
+            }
+
+            input {
+                @apply w-full py-[2%] px-[5%] text-white text-[1.6rem] bg-transparent border-0 border-b-2 border-b-white;
+            }
+
+            button {
+                @apply px-[3%] py-[2.5%] text-white rounded-[20px] text-2xl w-[40%] bg-[#0a3];
+            }
+        }
+    }
 }
-
-@media (max-width: 768px) {
+}
+            @media (max-width: 970px) {
     .container-inicio {
-        @apply h-[70vh];
+        @apply h-[70vh] pb-[10%] px-[5];
         .txt-inicial {
             @apply mx-[5%];
-        }
-        .texto-home {
-            @apply w-[80%];
+            h2 {
+                @apply text-[2rem];
+                }
+            span {
+                @apply text-[1.8rem] p-1;
+            }
+            p {
+                @apply text-[1.5rem] w-full;
+                }
         }
         .botao-home {
-            @apply mt-10;
+            @apply mt-10 mb-10;
+            h2{
+                @apply text-[1.5rem];
+            }
             }
         }
     
@@ -451,111 +635,166 @@
             @apply text-[2.5rem];
             }
         p {
-            @apply w-[90%] ml-0;
+            @apply w-[100%] px-[10%] justify-center ml-0;
             }
         }
         .img-sobre {
             @apply mt-5;
             .Image-Sobre {
-                @apply w-[90%];
+                @apply w-[100%] px-[10%] mb-10;
             }
         }
     }
-    
     .energias-container {
-        @apply flex-col items-center;
+        @apply flex-col items-center px-[10%];
         .txt-energias {
-            @apply w-full text-center;
+            @apply w-full text-left;
+            h2{
+                @apply text-[2.1rem] w-full text-center;
+            }
+            p {
+                @apply w-[100%] text-[1.2rem] text-left;
+                }
         }
         .card-energias {
-            @apply w-[70%] mt-5;
+            @apply w-[100%] mt-5;
             }
         }
     
     .carbono-container {
         .txt-carbono {
-            @apply flex-col;
-            .img-cal {
+            @apply w-full ;
+            .iti{
+                @apply w-0 text-center;
+            }
+            .caixa-carbono {
                 @apply w-full;
+            }
+            .img-cal {
+                @apply hidden;
             }
         .detalhes-carbono {
                 @apply w-full mt-5;
-            }
-        }
-    }
-
-    .areas-container-geral {
-        .container-areas {
-            @apply flex-wrap gap-5;
-            .card-areas {
-                @apply w-[45%];
+                h2{
+                    @apply w-[80%] text-[1.8rem];
+                }
+                p{
+                    @apply w-[80%];
                 }
             }
         }
     }
-
-@media (max-width: 578px) {
-    .container-inicio {
-        @apply flex-col h-[50vh];
-    .txt-inicial {
-        @apply mx-[3%];
+    .areas-container-geral {
+        .title-areas {
+            @apply text-[2rem] justify-center;
         }
-    .texto-home {
-        @apply text-[1rem];
-        }
-    .botao-home {
-        @apply text-[0.9rem] py-[8px] px-[12px];
-        }
-    }
-
-    .container-sobre {
-    .txt-sobre {
-        @apply text-center;
-        h2 {
-            @apply text-[1.8rem];
-        }
-        p {
-            @apply w-[100%] text-[1rem];
-        }
-    }
-
-    .img-sobre {
-        .Image-Sobre {
-            @apply w-[95%];
+        .container-areas {
+            @apply flex-col gap-4 justify-between w-full my-[2rem] h-full;
+            
+            h3{
+                @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
+            }
+            
+            p
+            {
+                @apply text-left p-3 text-[#4C4A41] text-[1.3rem]
+            }
+            .card-areas{
+                @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[600px];
+                    .img-card{
+                        @apply h-[300px] w-full rounded-t-[10px];
+                    }
+                } 
             }
         }
+}
+@media (max-width: 578px) {
+    .container-inicio {
+        @apply flex-col h-[70vh];
+        .txt-inicial {
+            @apply mx-[5%];
+            h2 {
+                @apply text-[2rem];
+                }
+            span {
+                @apply text-[1.5rem] p-[6px];
+            }
+            p {
+                @apply text-[1.5rem] mt-6 w-full;
+                }
+        }
+        .botao-home {
+            @apply mt-10 ;
+            h2{
+                @apply text-[1.5rem];
+            }
+        }
+    }
+    .txt-sobre {
+        @apply text-7xl;
     }
 
     .energias-container {
+        @apply flex-col items-center ;
         .txt-energias {
-            @apply w-full;
-        h2 {
-            @apply text-[1.5rem];
+            @apply w-full text-left;
+            h2{
+                @apply text-[2rem] w-full text-left;
+            }
+            p {
+                @apply w-[100%] text-[1.2rem] text-left;
+                }
         }
-    }
         .card-energias {
-            @apply w-[90%];
+            @apply w-[100%] mt-5 px-4;
+            }
         }
-    }
-
-    .carbono-container {
-        .txt-carbono {
-        .detalhes-carbono {
-            @apply w-full;
-                h2 {
-            @apply text-[1.8rem];
+        .carbono-container {
+            .txt-carbono {
+                @apply w-full ;
+                .iti{
+                    @apply w-0 text-center;
+                }
+                .caixa-carbono {
+                    @apply w-full;
+                }
+                .img-cal {
+                    @apply hidden;
+                }
+            .detalhes-carbono {
+                    @apply w-full mt-5;
+                    h2{
+                        @apply text-[2rem] w-full;
+                    }
+                    p{
+                        @apply w-full text-[1.2rem];
+                    }
                 }
             }
         }
-    }
 
     .areas-container-geral {
         .title-areas {
-            @apply text-[1.8rem];
+            @apply text-[2rem] justify-center;
         }
-        .card-areas {
-            @apply w-[100%];
+        .container-areas {
+            @apply flex-col gap-4 justify-between w-full my-[2rem] h-full;
+            
+            h3{
+                @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
+            }
+            
+            p
+            {
+                @apply text-left p-3 text-[#4C4A41] text-[1.3rem]
+            }
+            .card-areas{
+                @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[800px];
+                    .img-card{
+                        @apply h-[300px] w-full rounded-t-[10px];
+                    }
+                } 
             }
         }
-    } 
+    }
 }
