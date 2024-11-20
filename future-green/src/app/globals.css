@@ -645,3 +645,66 @@
             }
         }
     }
+    .energias-container {
+        @apply flex-col items-center px-[10%];
+        .txt-energias {
+            @apply w-full text-left;
+            h2{
+                @apply text-[2.1rem] w-full text-center;
+            }
+            p {
+                @apply w-[100%] text-[1.2rem] text-left;
+                }
+        }
+        .card-energias {
+            @apply w-[100%] mt-5;
+            }
+        }
+    
+    .carbono-container {
+        .txt-carbono {
+            @apply w-full ;
+            .iti{
+                @apply w-0 text-center;
+            }
+            .caixa-carbono {
+                @apply w-full;
+            }
+            .img-cal {
+                @apply hidden;
+            }
+        .detalhes-carbono {
+                @apply w-full mt-5;
+                h2{
+                    @apply w-[80%] text-[1.8rem];
+                }
+                p{
+                    @apply w-[80%];
+                }
+            }
+        }
+    }
+    .areas-container-geral {
+        .title-areas {
+            @apply text-[2rem] justify-center;
+        }
+        .container-areas {
+            @apply flex-col gap-4 justify-between w-full my-[2rem] h-full;
+            
+            h3{
+                @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
+            }
+            
+            p
+            {
+                @apply text-left p-3 text-[#4C4A41] text-[1.3rem]
+            }
+            .card-areas{
+                @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[600px];
+                    .img-card{
+                        @apply h-[300px] w-full rounded-t-[10px];
+                    }
+                } 
+            }
+        }
+}
