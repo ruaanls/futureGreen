@@ -31,8 +31,8 @@ export default function Header() {
     localStorage.removeItem("dadosLogin"); // Remove o item do localStorage
     setNome(null);
     router.push("/login");
-     // Atualiza o estado para deslogado
   };
+
 
   return (
     <header className="header">
@@ -67,7 +67,7 @@ export default function Header() {
                 <p>Abra sua conta</p>
               </Link>
             </button>
-            <Link href={"/login"}>
+            <Link href={"/login"} className="Login-button">
               <p>Login</p>
             </Link>
           </>

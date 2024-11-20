@@ -93,7 +93,7 @@ export default function Cadastro() {
               
             </form>
 
-            <Link href="/cadEmpresa"><p>Cadastro para Empresas</p></Link>
+            <Link href="/cadEmpresa" className='CadempresaButao'><p>Cadastro para Empresas</p></Link>
 
           </div>
         </div>
