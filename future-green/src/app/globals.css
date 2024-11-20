@@ -603,4 +603,45 @@
         }
     }
 }
-
+}
+            @media (max-width: 970px) {
+    .container-inicio {
+        @apply h-[70vh] pb-[10%] px-[5];
+        .txt-inicial {
+            @apply mx-[5%];
+            h2 {
+                @apply text-[2rem];
+                }
+            span {
+                @apply text-[1.8rem] p-1;
+            }
+            p {
+                @apply text-[1.5rem] w-full;
+                }
+        }
+        .botao-home {
+            @apply mt-10 mb-10;
+            h2{
+                @apply text-[1.5rem];
+            }
+            }
+        }
+    
+    .container-sobre {
+        @apply flex-col px-[3%] py-[5%];
+        .txt-sobre {
+            @apply w-full;
+        h2 {
+            @apply text-[2.5rem];
+            }
+        p {
+            @apply w-[100%] px-[10%] justify-center ml-0;
+            }
+        }
+        .img-sobre {
+            @apply mt-5;
+            .Image-Sobre {
+                @apply w-[100%] px-[10%] mb-10;
+            }
+        }
+    }
