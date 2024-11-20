@@ -491,3 +491,14 @@
                     }
                 }
             }
+            .energias-container {
+                @apply flex-col items-center px-[5%];
+                .txt-energias {
+                    @apply w-full text-left;
+                    h2{
+                        @apply text-[2.1rem] w-full text-center;
+                    }
+                    p {
+                        @apply w-[100%] text-[1.5rem] text-left;
+                        }
+                }}
