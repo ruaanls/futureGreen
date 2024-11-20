@@ -708,3 +708,44 @@
             }
         }
 }
+@media (max-width: 578px) {
+    .container-inicio {
+        @apply flex-col h-[70vh];
+        .txt-inicial {
+            @apply mx-[5%];
+            h2 {
+                @apply text-[2rem];
+                }
+            span {
+                @apply text-[1.5rem] p-[6px];
+            }
+            p {
+                @apply text-[1.5rem] mt-6 w-full;
+                }
+        }
+        .botao-home {
+            @apply mt-10 ;
+            h2{
+                @apply text-[1.5rem];
+            }
+        }
+    }
+    .txt-sobre {
+        @apply text-7xl;
+    }
+
+    .energias-container {
+        @apply flex-col items-center ;
+        .txt-energias {
+            @apply w-full text-left;
+            h2{
+                @apply text-[2rem] w-full text-left;
+            }
+            p {
+                @apply w-[100%] text-[1.2rem] text-left;
+                }
+        }
+        .card-energias {
+            @apply w-[100%] mt-5 px-4;
+            }
+        }
