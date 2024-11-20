@@ -450,3 +450,19 @@
                 }
             }
     }
+    @media (max-width: 1024px) {
+        .container-inicio {
+                @apply h-[70vh] pb-[10%] px-[5];
+                .txt-inicial {
+                    @apply mx-[5%];
+                    h2 {
+                        @apply text-[2rem];
+                        }
+                    span {
+                        @apply text-[1.8rem] p-1;
+                    }
+                    p {
+                        @apply text-[1.5rem] w-full;
+                        }
+                }}
+            }
