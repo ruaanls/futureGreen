@@ -501,4 +501,42 @@
                     p {
                         @apply w-[100%] text-[1.5rem] text-left;
                         }
-                }}
+                }
+                .card-energias {
+                    @apply w-[100%] mt-5;
+                    }
+                }
+            
+            .carbono-container {
+                @apply flex;
+                .txt-carbono {
+                    @apply w-full flex-col;
+                    .iti{
+                        @apply w-[100%] text-center;
+                    }
+                    .caixa-carbono {
+                        @apply w-full;
+                    }
+                    .img-corbo{
+                        @apply w-full;
+                        .img-cal {
+                            @apply w-full;
+                    }
+                }
+                .detalhes-carbono {
+                        @apply w-full my-0;
+                        .title-calculo{
+                            @apply flex;
+                        }
+                        h2{
+                            @apply w-[100%] text-[3rem];
+                        }
+                        p{
+                            @apply w-[100%];
+                        }
+                        .botao-carbono{
+                            @apply w-[60%] mb-0 text-center;
+                        }
+                    }
+                }
+            }
