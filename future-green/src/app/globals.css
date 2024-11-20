@@ -540,3 +540,67 @@
                     }
                 }
             }
+            .areas-container-geral {
+                .title-areas {
+                    @apply text-[2rem] justify-center;
+                }
+                .container-areas {
+                    @apply flex gap-4 justify-between my-[2rem] h-full;
+                    
+                    h3{
+                        @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
+                    }
+                    
+                    p
+                    {
+                        @apply text-left p-3 text-[#4C4A41] text-[1.3rem]
+                    }
+                    .card-areas{
+                        @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[900px];
+                            .img-card{
+                                @apply h-[300px] w-full rounded-t-[10px];
+                            }
+                        } 
+                    }
+                }
+
+            .cadastroGeral {
+    @apply flex flex-col h-[90vh];
+
+    .containerImg {
+    @apply h-full w-[40%] relative hidden lg:block;
+    
+    .img-login {
+        @apply w-full h-full object-cover;
+    }
+    }
+
+        .containerExternoForm {
+            @apply flex justify-center items-center h-full py-[2%] px-[5%] bg-gradient-to-r from-[#0a3] via-[#005f19] to-[#003823] w-full lg:w-[60%];
+    }
+
+        .containerForm {
+            @apply px-[5%] py-[10%] text-center text-white flex-col items-center w-full lg:w-[90%] rounded-[12px] bg-black/50;
+
+        h1 {
+            @apply text-[2rem] pb-[50px];
+        }
+
+            .form {
+                @apply flex flex-col items-center w-full gap-[32px];
+
+            .linha {
+                @apply flex gap-[50px] justify-center flex-col;
+            }
+
+            input {
+                @apply w-full py-[2%] px-[5%] text-white text-[1.6rem] bg-transparent border-0 border-b-2 border-b-white;
+            }
+
+            button {
+                @apply px-[3%] py-[2.5%] text-white rounded-[20px] text-2xl w-[40%] bg-[#0a3];
+            }
+        }
+    }
+}
+
