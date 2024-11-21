@@ -58,7 +58,7 @@ export default function Carbono() {
             cpf: cpfLocal,
           }));
 
-          console.log(cpf + "-" + cnpj)
+          console.log(cpf + "-" +cnpj)
           
         }
         if(cnpjLocal)

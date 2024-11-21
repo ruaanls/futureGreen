@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { RespostaLogin, RespostaLoginEmpresa } from "@/types/types";
+
 import logo from "@/../public/Logo.png";
 import { useRouter } from "next/navigation";
 

@@ -13,7 +13,7 @@ import { RespostaLogin, RespostaLoginEmpresa } from '@/types/types'
 import Link from 'next/link'
 
 
-export default function page() {
+export default function Page() {
 
   const [dados, setDados] = useState<RespostaLogin | RespostaLoginEmpresa | null>(null);
 
