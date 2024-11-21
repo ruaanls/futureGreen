@@ -2,799 +2,751 @@
 @tailwind components;
 @tailwind utilities;
 
-*
-{
-    scroll-behavior: smooth;
+* {
+  scroll-behavior: smooth;
 }
 
-    body {
-        @apply font-sans ; 
-    }
+body {
+  @apply font-sans;
+}
 
 .containerInicio {
-    background-image: url("/img/img-fundo-inicio.png");
-    background-size: cover;
+  background-image: url("/img/img-fundo-inicio.png");
+  background-size: cover;
 }
 
 @layer components {
+  /* Header */
 
+  .header {
+    @apply flex justify-between text-black items-center px-[1.75%] bg-[#ffffff] sticky top-0 z-[1];
 
-
-    /* Header */
-
-    .header {
-        @apply flex justify-between text-black items-center px-[1.75%] bg-[#ffffff] sticky top-0 z-[1] ;
-    
-    .caixa-logo{
-        @apply w-[15%];
+    .caixa-logo {
+      @apply w-[15%];
     }
-    
+
     .logo {
-        @apply w-[100%];
+      @apply w-[100%];
     }
 
     .menu {
-        @apply flex justify-between gap-6 items-center border-none;
-        p {
-            @apply text-2xl hover:border-b-2 hover:border-slate-900;
-        }
+      @apply flex justify-between gap-6 items-center border-none;
+      p {
+        @apply text-2xl hover:border-b-2 hover:border-slate-900;
+      }
     }
 
     .loginHeader {
-        @apply flex items-center justify-center gap-12 w-[25%];
+      @apply flex items-center justify-center gap-12 w-[25%];
 
-        p {
-            @apply text-2xl;
-        }
-        .Icon-User{
-            @apply text-5xl text-[#151515]  cursor-pointer hover:text-[#1a3];
-        }
-        .botao {
-            @apply bg-[#182FC4] py-[3%] px-[4%] rounded-[10px] text-white cursor-pointer;
-        }
+      p {
+        @apply text-2xl;
+      }
+      .Icon-User {
+        @apply text-5xl text-[#151515]  cursor-pointer hover:text-[#1a3];
+      }
+      .botao {
+        @apply bg-[#182FC4] py-[3%] px-[4%] rounded-[10px] text-white cursor-pointer;
+      }
     }
-}
+  }
 
   /* Header */
 
+  /* Footer */
 
-
-
-
-
-/* Footer */
-
-
-    .footer {
-        @apply bg-[#182FC4] text-slate-950 gap-6 flex justify-center items-center py-[2%] px-[5%] text-white;
+  .footer {
+    @apply bg-[#182FC4] text-slate-950 gap-6 flex justify-center items-center py-[2%] px-[5%] text-white;
 
     .img {
-        @apply w-[15%] mr-4;
+      @apply w-[15%] mr-4;
     }
 
     h1 {
-        @apply text-3xl font-normal;
-        }
+      @apply text-3xl font-normal;
     }
+  }
   /* Footer */
 
-
-    @media (min-width: 645px) and (max-width: 731px) {
-        .menu {
-            p {
-                @apply text-[0.8rem];
-            }
-        }
-
-    .loginHeader {
-            .botao{
-                @apply border py-0 px-5 w-full;
-                p{
-                    @apply text-[0.5em];
-            }
-        }
-        .Login-button p{
-                @apply text-[0.8em] text-white;
-                }
-        }
-    }
-
-    @media (min-width: 732px) and (max-width: 911px) {
-        .menu {
-            p {
-                @apply text-[1rem];
-        }
+  @media (min-width: 645px) and (max-width: 731px) {
+    .menu {
+      p {
+        @apply text-[0.8rem];
+      }
     }
 
     .loginHeader {
-        .botao{
-            @apply border py-0 px-5;
-                p{
-                    @apply text-[0.6em];
+      .botao {
+        @apply border py-0 px-5 w-full;
+        p {
+          @apply text-[0.5em];
         }
+      }
+      .Login-button p {
+        @apply text-[0.8em] text-white;
+      }
     }
-        .Login-button p{
-                @apply text-[1em] text-white;
-            }
-        }
-    }
+  }
 
-
-    @media (min-width: 917px) and (max-width: 1249px) {
-        .loginHeader {
-        .botao p{
-            @apply text-[0.8em];
-            }
-        }
+  @media (min-width: 732px) and (max-width: 911px) {
+    .menu {
+      p {
+        @apply text-[1rem];
+      }
     }
 
+    .loginHeader {
+      .botao {
+        @apply border py-0 px-5;
+        p {
+          @apply text-[0.6em];
+        }
+      }
+      .Login-button p {
+        @apply text-[1em] text-white;
+      }
+    }
+  }
 
-/* Footer e Heder */
+  @media (min-width: 917px) and (max-width: 1249px) {
+    .loginHeader {
+      .botao p {
+        @apply text-[0.8em];
+      }
+    }
+  }
 
+  /* Footer e Heder */
 
+  /* Login */
 
-/* Login */
-
-.cadastroGeral {
+  .cadastroGeral {
     @apply flex h-[90vh];
 
     .containerImg {
-    @apply h-full w-[40%] relative;
+      @apply h-full w-[40%] relative;
 
-        .img-login {
+      .img-login {
         @apply w-full h-full object-cover;
-        }
+      }
     }
 
     .containerExternoForm {
-        @apply flex justify-center items-center h-full py-[2%] px-[5%] bg-gradient-to-r from-[#0a3] via-[#005f19] to-[#003823] w-[60%];
+      @apply flex justify-center items-center h-full py-[2%] px-[5%] bg-gradient-to-r from-[#0a3] via-[#005f19] to-[#003823] w-[60%];
 
-    .containerForm {
+      .containerForm {
         @apply px-[5%] py-[10%] text-center text-white flex-col items-center w-[90%] rounded-[12px] bg-black/50;
 
         h1 {
-        @apply text-[2rem] pb-[50px];
+          @apply text-[2rem] pb-[50px];
         }
 
         .form {
-        @apply flex flex-col items-center w-full gap-[32px];
+          @apply flex flex-col items-center w-full gap-[32px];
 
-        .linha {
+          .linha {
             @apply flex gap-[50px] justify-center flex-col;
-        }
+          }
 
-        input {
+          input {
             @apply w-full py-[2%] px-[5%] text-white text-[1.6rem] bg-transparent border-0 border-b-2 border-b-white;
-        }
+          }
 
-        button {
+          button {
             @apply px-[3%] py-[2.5%] text-white rounded-[20px] text-2xl w-[40%] bg-[#0a3];
-                }
-            }
+          }
         }
+      }
     }
-}
+  }
 
+  /* Login */
 
+  /* CARBONO */
 
-
-/* Login */
-
-/* CARBONO */ 
-
-.fundoCarbono
-{
+  .fundoCarbono {
     @apply bg-red-400 h-[90vh] p-[10%] flex flex-col justify-center items-center;
-    .formulario-container
-    {
-        @apply flex flex-col
+    .formulario-container {
+      @apply flex flex-col;
     }
-}
+  }
 
+  /* Cadastro */
 
-
-/* Cadastro */
-
-.cadastroGeral.cadastro {
+  .cadastroGeral.cadastro {
     .containerForm {
-        @apply px-[4%] py-[5%] w-[80%];
-}
-}
-
-/* Cadastro */
-
-
-
-/* Integrantes */
-    
-    .sectionIntegrante{
-        @apply flex flex-col items-center w-full bg-slate-950;
-    & h1{
-        @apply text-[4rem] text-center mt-[5%] text-[#0a3] font-[600] mb-[5%]
+      @apply px-[4%] py-[5%] w-[80%];
     }
-    & .containerIntegrante{
-        @apply w-[55%] mb-[10%];
-        & .integranteBox{
-        @apply  bg-gradient-to-r from-[#0a3] via-[#005f19] to-[#003823] shadow-lg shadow-green-700 flex rounded-[15px] mb-[10%];
-        & .imgSocial{
-            @apply w-[30%] p-[5%] rounded-[50%] mr-[10%];
-        }        
-        .infoIntegrant{
-            @apply flex flex-col justify-center;
-        & h2{
+  }
+
+  /* Cadastro */
+
+  /* Integrantes */
+
+  .sectionIntegrante {
+    @apply flex flex-col items-center w-full bg-slate-950;
+    & h1 {
+      @apply text-[4rem] text-center mt-[5%] text-[#0a3] font-[600] mb-[5%];
+    }
+    & .containerIntegrante {
+      @apply w-[55%] mb-[10%];
+      & .integranteBox {
+        @apply bg-gradient-to-r from-[#0a3] via-[#005f19] to-[#003823] shadow-lg shadow-green-700 flex rounded-[15px] mb-[10%];
+        & .imgSocial {
+          @apply w-[30%] p-[5%] rounded-[50%] mr-[10%];
+        }
+        .infoIntegrant {
+          @apply flex flex-col justify-center;
+          & h2 {
             @apply text-[2.5rem] text-white border-dotted border-gray-900 border-b-2;
-        }
+          }
 
-        & .Socials{
-            @apply text-6xl text-black flex flex-row gap-[4%] pt-[3%]; 
-                }
-            }
+          & .Socials {
+            @apply text-6xl text-black flex flex-row gap-[4%] pt-[3%];
+          }
         }
-        
+      }
     }
-}
+  }
 
+  /* Integrantes */
 
-/* Integrantes */
+  /* --- Página Inicial ----*/
 
-
-
-
-
-/* --- Página Inicial ----*/
-
-    
-
-    .container-inicio {
-        @apply h-[90vh] w-[100%] animate-fade-up animate-once bg-slate-500 flex items-center  bg-cover bg-center;
-            h2 {
-                @apply text-[3.75rem] font-[400] leading-[1.8] mb-5 text-white w-[65%];
-                
-            }
-
-            p{
-                @apply text-[1.4rem] text-white
-            }
-
-            span {
-                @apply bg-[#050] py-[4px] px-[12px] rounded-[3px] font-bold;
-            }
-        
-            .txt-inicial {
-                @apply my-[0.5%] mx-[10%];
-            }
-        
-            .texto-home {
-                @apply w-[50%] text-balance;
-            }
-        
-            .botao-home {
-                @apply rounded-[12px] bg-[#050] py-[15px] mt-20 text-white cursor-pointer flex items-center justify-center   w-[17%];
-                a
-                {
-                    @apply w-[100%] flex justify-center;
-                }
-                h2
-                {
-                    @apply text-[1.7rem] mb-0 font-[500] ;
-                }
-            }
+  .container-inicio {
+    @apply h-[90vh] w-[100%] animate-fade-up animate-once bg-slate-500 flex items-center  bg-cover bg-center;
+    h2 {
+      @apply text-[3.75rem] font-[400] leading-[1.8] mb-5 text-white w-[65%];
     }
 
-/* p1 */
+    p {
+      @apply text-[1.4rem] text-white;
+    }
 
-/* p2 */
-.container-sobre{
+    span {
+      @apply bg-[#050] py-[4px] px-[12px] rounded-[3px] font-bold;
+    }
+
+    .txt-inicial {
+      @apply my-[0.5%] mx-[10%];
+    }
+
+    .texto-home {
+      @apply w-[50%] text-balance;
+    }
+
+    .botao-home {
+      @apply rounded-[12px] bg-[#050] py-[15px] mt-20 text-white cursor-pointer flex items-center justify-center   w-[17%];
+      a {
+        @apply w-[100%] flex justify-center;
+      }
+      h2 {
+        @apply text-[1.7rem] mb-0 font-[500];
+      }
+    }
+  }
+
+  /* p1 */
+
+  /* p2 */
+  .container-sobre {
     @apply flex bg-[#EBEBEB] animate-fade-up justify-center gap-[3rem] px-[8%] py-[8%] text-center;
 
-    .txt-sobre{
-        @apply w-[60%] content-center align-middle;
-            h2{
-                @apply text-[5rem] text-[#45433A] font-[100] pb-[1rem]  border-b-2 border-[#45433A];
-                span
-                {
-                    @apply font-[400];
-                }
-            }
-            p {
-                @apply text-[1.4rem] ml-[10%] mt-6 text-[#45433a] w-[80%] text-left font-[400];
-            }
-            button
-            {
-                @apply bg-[#fff0] mt-[2rem] px-[3%] py-[2%] w-[40%] rounded-[40px] border-2 border-[#45433A];
-                h1
-                {
-                    @apply text-[1.5rem] text-[#45433a] font-[600];
-                }
-            }
+    .txt-sobre {
+      @apply w-[60%] content-center align-middle;
+      h2 {
+        @apply text-[5rem] text-[#45433A] font-[100] pb-[1rem]  border-b-2 border-[#45433A];
+        span {
+          @apply font-[400];
         }
-    .img-sobre{
-        @apply content-center align-middle w-[50%] ;
-        .Image-Sobre {
-            @apply w-[100%] rounded;
+      }
+      p {
+        @apply text-[1.4rem] ml-[10%] mt-6 text-[#45433a] w-[80%] text-left font-[400];
+      }
+      button {
+        @apply bg-[#fff0] mt-[2rem] px-[3%] py-[2%] w-[40%] rounded-[40px] border-2 border-[#45433A];
+        h1 {
+          @apply text-[1.5rem] text-[#45433a] font-[600];
         }
+      }
     }
+    .img-sobre {
+      @apply content-center align-middle w-[50%];
+      .Image-Sobre {
+        @apply w-[100%] rounded;
+      }
     }
-/* p2 */
-    
+  }
+  /* p2 */
 
-    .energias-container {
-        @apply flex justify-between px-[5%] py-[8%] text-white bg-[#182FC4] items-center;
+  .energias-container {
+    @apply flex justify-between px-[5%] py-[8%] text-white bg-[#182FC4] items-center;
 
-        .txt-energias{
-            @apply w-[40%] h-fit;
-            h2 {
-                @apply text-[4rem] font-[400] text-balance mb-[2rem];
-                span
-                {
-                    @apply font-bold;
-                }
-            }
-            p {
-                @apply text-[1.3rem] text-balance font-[400];
-            }
+    .txt-energias {
+      @apply w-[40%] h-fit;
+      h2 {
+        @apply text-[4rem] font-[400] text-balance mb-[2rem];
+        span {
+          @apply font-bold;
         }
-        .card-energias {
-            @apply px-[3%] h-[500px] max-h-[450px] rounded-[15px] w-[27%] text-white;   
-            .numero
-            {
-                @apply text-[6rem] font-[700] ;
-            }  
-            .titulo
-            {
-                @apply text-[3.75rem] font-[500] leading-[1.2] mb-[1rem];
-            }  
-
-            p
-            {
-                @apply text-[1.3rem] font-[400];
-            }
-        }
+      }
+      p {
+        @apply text-[1.3rem] text-balance font-[400];
+      }
     }
-    /* p2 */
+    .card-energias {
+      @apply px-[3%] h-[500px] max-h-[450px] rounded-[15px] w-[27%] text-white;
+      .numero {
+        @apply text-[6rem] font-[700];
+      }
+      .titulo {
+        @apply text-[3.75rem] font-[500] leading-[1.2] mb-[1rem];
+      }
 
-
-    /* p3 */
-
-    .carbono-container
-    {
-        @apply  px-[7%] py-[8%] bg-[#007F39] text-white;
-    .txt-carbono{
-            @apply flex justify-between gap-[5rem];
-        .img-cal{
-            @apply w-[90%] rounded-[10px];
-        }
-        .detalhes-carbono {
-            @apply w-[40%]  mr-[5%];
-                button {
-                    @apply bg-[#11aa3200] mt-[2rem] px-[3%] py-[3%] w-[60%] rounded-[40px] border-2 border-[#ffffff] ;
-                    h1
-                    {
-                        @apply text-[1.5rem] text-[#ffffff] font-[600];
-                    }
-                }
-            }
-        }
-        h2 {
-            @apply text-[4rem] font-[400]  leading-[1.2] ;
-            span
-            {
-                @apply font-bold ;
-            }
-        }
-        .title-calculo{
-            @apply border-b-2 pb-[2rem] w-[100%]  ;
-        }
-        p {
-            @apply text-[1.5rem] pt-4;
-        }
-
-        
+      p {
+        @apply text-[1.3rem] font-[400];
+      }
     }
+  }
 
-.areas-container-geral {
-    @apply py-[2.5%] px-[13%] bg-[#DCDBD5] ;
-    
-    .title-areas{
-        @apply text-[3rem] font-bold text-[#45433A];
+  /* p2 */
+
+  /* p3 */
+
+  .carbono-container {
+    @apply px-[7%] py-[8%] bg-[#007F39] text-white;
+    .txt-carbono {
+      @apply flex justify-between gap-[5rem];
+      .img-cal {
+        @apply w-[90%] rounded-[10px];
+      }
+      .detalhes-carbono {
+        @apply w-[40%]  mr-[5%];
+        button {
+          @apply bg-[#11aa3200] mt-[2rem] px-[3%] py-[3%] w-[60%] rounded-[40px] border-2 border-[#ffffff];
+          h1 {
+            @apply text-[1.5rem] text-[#ffffff] font-[600];
+          }
+        }
+      }
     }
-    .subTitle-areas{
-        @apply text-[1.5rem] text-[#45433A] ;
+    h2 {
+      @apply text-[4rem] font-[400]  leading-[1.2];
+      span {
+        @apply font-bold;
+      }
+    }
+    .title-calculo {
+      @apply border-b-2 pb-[2rem] w-[100%];
+    }
+    p {
+      @apply text-[1.5rem] pt-4;
+    }
+  }
+
+  .areas-container-geral {
+    @apply py-[2.5%] px-[13%] bg-[#DCDBD5];
+
+    .title-areas {
+      @apply text-[3rem] font-bold text-[#45433A];
+    }
+    .subTitle-areas {
+      @apply text-[1.5rem] text-[#45433A];
     }
     .container-areas {
-        @apply flex justify-between my-[2rem]  ;
-        
-        h2{
-            @apply text-[3rem] text-[#4C4A41] font-[500];
+      @apply flex justify-between my-[2rem];
+
+      h2 {
+        @apply text-[3rem] text-[#4C4A41] font-[500];
+      }
+
+      p {
+        @apply text-[#4C4A41] text-[1.4rem];
+      }
+      .card-areas {
+        @apply w-[30%] h-fit;
+        .img-card {
+          @apply w-[100%] rounded-t-[10px];
         }
-        
-        p
-        {
-            @apply text-[#4C4A41] text-[1.4rem]
+        .txt-card-areas {
+          @apply p-[5%] rounded-b-[10px] 
+                    bg-white text-[#1a3];
         }
-        .card-areas{
-            @apply w-[30%] h-fit;
-                .img-card{
-                    @apply w-[100%] rounded-t-[10px];
-                }
-                .txt-card-areas{
-                    @apply p-[5%] rounded-b-[10px] 
-                    bg-white text-[#1a3]
-                }
-            }
+      }
+    }
+  }
+
+  @media (max-width: 1220px) {
+    .areas-container-geral {
+      .title-areas {
+        @apply text-[2rem] justify-center;
+      }
+      .container-areas {
+        @apply flex gap-4 justify-between w-full my-[2rem] h-full;
+
+        h3 {
+          @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
         }
+
+        p {
+          @apply text-left p-3 text-[#4C4A41] text-[1.3rem];
+        }
+        .card-areas {
+          @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[800px];
+          .img-card {
+            @apply h-[300px] w-full rounded-t-[10px];
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    .container-inicio {
+      @apply h-[70vh] pb-[10%] px-[5];
+      .txt-inicial {
+        @apply mx-[5%];
+        h2 {
+          @apply text-[2rem];
+        }
+        span {
+          @apply text-[1.8rem] p-1;
+        }
+        p {
+          @apply text-[1.5rem] w-full;
+        }
+      }
+      .botao-home {
+        @apply mt-10 w-40 mb-10;
+        h2 {
+          @apply text-[1.5rem] w-full;
+        }
+      }
     }
 
-    @media (max-width: 1220px){
-        .areas-container-geral {
-            .title-areas {
-                @apply text-[2rem] justify-center;
-            }
-            .container-areas {
-                @apply flex gap-4 justify-between w-full my-[2rem] h-full;
-                
-                h3{
-                    @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
-                }
-                
-                p
-                {
-                    @apply text-left p-3 text-[#4C4A41] text-[1.3rem]
-                }
-                .card-areas{
-                    @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[800px];
-                        .img-card{
-                            @apply h-[300px] w-full rounded-t-[10px];
-                        }
-                    }
-                }
-            }
+    .container-sobre {
+      @apply flex-col px-[3%] py-[5%];
+      .txt-sobre {
+        @apply w-full;
+        h2 {
+          @apply text-[2.5rem];
+        }
+        p {
+          @apply w-[100%] px-[10%] justify-center ml-0;
+        }
+      }
+      .img-sobre {
+        @apply mt-5 hidden;
+        .Image-Sobre {
+          @apply w-[100%] px-[10%] mb-10;
+        }
+      }
     }
-    @media (max-width: 1024px) {
-        .container-inicio {
-                @apply h-[70vh] pb-[10%] px-[5];
-                .txt-inicial {
-                    @apply mx-[5%];
-                    h2 {
-                        @apply text-[2rem];
-                        }
-                    span {
-                        @apply text-[1.8rem] p-1;
-                    }
-                    p {
-                        @apply text-[1.5rem] w-full;
-                        }
-                }
-                .botao-home {
-                    @apply mt-10 w-40 mb-10;
-                    h2{
-                        @apply text-[1.5rem] w-full;
-                    }
-                    }
-                }
-            
-            .container-sobre {
-                @apply flex-col px-[3%] py-[5%];
-                .txt-sobre {
-                    @apply w-full;
-                h2 {
-                    @apply text-[2.5rem];
-                    }
-                p {
-                    @apply w-[100%] px-[10%] justify-center ml-0;
-                    }
-                }
-                .img-sobre {
-                    @apply mt-5 hidden;
-                    .Image-Sobre {
-                        @apply w-[100%] px-[10%] mb-10;
-                    }
-                }
-            }
-            .energias-container {
-                @apply flex-col items-center px-[5%];
-                .txt-energias {
-                    @apply w-full text-left;
-                    h2{
-                        @apply text-[2.1rem] w-full text-center;
-                    }
-                    p {
-                        @apply w-[100%] text-[1.5rem] text-left;
-                        }
-                }
-                .card-energias {
-                    @apply w-[100%] mt-5;
-                    }
-                }
-            
-            .carbono-container {
-                @apply flex;
-                .txt-carbono {
-                    @apply w-full flex-col;
-                    .iti{
-                        @apply w-[100%] text-center;
-                    }
-                    .caixa-carbono {
-                        @apply w-full;
-                    }
-                    .img-corbo{
-                        @apply w-full;
-                        .img-cal {
-                            @apply w-full;
-                    }
-                }
-                .detalhes-carbono {
-                        @apply w-full my-0;
-                        .title-calculo{
-                            @apply flex;
-                        }
-                        h2{
-                            @apply w-[100%] text-[3rem];
-                        }
-                        p{
-                            @apply w-[100%];
-                        }
-                        .botao-carbono{
-                            @apply w-[60%] mb-0 text-center;
-                        }
-                    }
-                }
-            }
-            .areas-container-geral {
-                .title-areas {
-                    @apply text-[2rem] justify-center;
-                }
-                .container-areas {
-                    @apply flex gap-4 justify-between my-[2rem] h-full;
-                    
-                    h3{
-                        @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
-                    }
-                    
-                    p
-                    {
-                        @apply text-left p-3 text-[#4C4A41] text-[1.3rem]
-                    }
-                    .card-areas{
-                        @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[900px];
-                            .img-card{
-                                @apply h-[300px] w-full rounded-t-[10px];
-                            }
-                        } 
-                    }
-                }
-
-            .cadastroGeral {
-    @apply flex flex-col h-[90vh];
-
-    .containerImg {
-    @apply h-full w-[40%] relative hidden lg:block;
-    
-    .img-login {
-        @apply w-full h-full object-cover;
-    }
+    .energias-container {
+      @apply flex-col items-center px-[5%];
+      .txt-energias {
+        @apply w-full text-left;
+        h2 {
+          @apply text-[2.1rem] w-full text-center;
+        }
+        p {
+          @apply w-[100%] text-[1.5rem] text-left;
+        }
+      }
+      .card-energias {
+        @apply w-[100%] mt-5;
+      }
     }
 
-        .containerExternoForm {
-            @apply flex justify-center items-center h-full py-[2%] px-[5%] bg-gradient-to-r from-[#0a3] via-[#005f19] to-[#003823] w-full lg:w-[60%];
+    .carbono-container {
+      @apply flex;
+      .txt-carbono {
+        @apply w-full flex-col;
+        .iti {
+          @apply w-[100%] text-center;
+        }
+        .caixa-carbono {
+          @apply w-full;
+        }
+        .img-corbo {
+          @apply w-full;
+          .img-cal {
+            @apply w-full;
+          }
+        }
+        .detalhes-carbono {
+          @apply w-full my-0;
+          .title-calculo {
+            @apply flex;
+          }
+          h2 {
+            @apply w-[100%] text-[3rem];
+          }
+          p {
+            @apply w-[100%];
+          }
+          .botao-carbono {
+            @apply w-[60%] mb-0 text-center;
+          }
+        }
+      }
+    }
+    .areas-container-geral {
+      .title-areas {
+        @apply text-[2rem] justify-center;
+      }
+      .container-areas {
+        @apply flex gap-4 justify-between my-[2rem] h-full;
+
+        h3 {
+          @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
+        }
+
+        p {
+          @apply text-left p-3 text-[#4C4A41] text-[1.3rem];
+        }
+        .card-areas {
+          @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[900px];
+          .img-card {
+            @apply h-[300px] w-full rounded-t-[10px];
+          }
+        }
+      }
     }
 
-        .containerForm {
-            @apply px-[5%] py-[10%] text-center text-white flex-col items-center w-full lg:w-[90%] rounded-[12px] bg-black/50;
+    .cadastroGeral {
+      @apply flex flex-col h-[90vh];
+
+      .containerImg {
+        @apply h-full w-[40%] relative hidden lg:block;
+
+        .img-login {
+          @apply w-full h-full object-cover;
+        }
+      }
+
+      .containerExternoForm {
+        @apply flex justify-center items-center h-full py-[2%] px-[5%] bg-gradient-to-r from-[#0a3] via-[#005f19] to-[#003823] w-full lg:w-[60%];
+      }
+
+      .containerForm {
+        @apply px-[5%] py-[10%] text-center text-white flex-col items-center w-full lg:w-[90%] rounded-[12px] bg-black/50;
 
         h1 {
-            @apply text-[2rem] pb-[50px];
+          @apply text-[2rem] pb-[50px];
         }
 
-            .form {
-                @apply flex flex-col items-center w-full gap-[32px];
+        .form {
+          @apply flex flex-col items-center w-full gap-[32px];
 
-            .linha {
-                @apply flex gap-[50px] justify-center flex-col;
-            }
+          .linha {
+            @apply flex gap-[50px] justify-center flex-col;
+          }
 
-            input {
-                @apply w-full py-[2%] px-[5%] text-white text-[1.6rem] bg-transparent border-0 border-b-2 border-b-white;
-            }
+          input {
+            @apply w-full py-[2%] px-[5%] text-white text-[1.6rem] bg-transparent border-0 border-b-2 border-b-white;
+          }
 
-            button {
-                @apply px-[3%] py-[2.5%] text-white rounded-[20px] text-2xl w-[40%] bg-[#0a3];
-            }
+          button {
+            @apply px-[3%] py-[2.5%] text-white rounded-[20px] text-2xl w-[40%] bg-[#0a3];
+          }
         }
+      }
     }
-}
-}
-            @media (max-width: 970px) {
+  }
+  @media (max-width: 970px) {
     .container-inicio {
-        @apply h-[70vh] pb-[10%] px-[5];
-        .txt-inicial {
-            @apply mx-[5%];
-            h2 {
-                @apply text-[2rem];
-                }
-            span {
-                @apply text-[1.8rem] p-1;
-            }
-            p {
-                @apply text-[1.5rem] w-full;
-                }
-        }
-        .botao-home {
-            @apply mt-10 mb-10;
-            h2{
-                @apply text-[1.5rem];
-            }
-            }
-        }
-    
-    .container-sobre {
-        @apply flex-col px-[3%] py-[5%];
-        .txt-sobre {
-            @apply w-full;
+      @apply h-[70vh] pb-[10%] px-[5];
+      .txt-inicial {
+        @apply mx-[5%];
         h2 {
-            @apply text-[2.5rem];
-            }
+          @apply text-[2rem];
+        }
+        span {
+          @apply text-[1.8rem] p-1;
+        }
         p {
-            @apply w-[100%] px-[10%] justify-center ml-0;
-            }
+          @apply text-[1.5rem] w-full;
         }
-        .img-sobre {
-            @apply mt-5;
-            .Image-Sobre {
-                @apply w-[100%] px-[10%] mb-10;
-            }
+      }
+      .botao-home {
+        @apply mt-10 mb-10;
+        h2 {
+          @apply text-[1.5rem];
         }
+      }
+    }
+
+    .container-sobre {
+      @apply flex-col px-[3%] py-[5%];
+      .txt-sobre {
+        @apply w-full;
+        h2 {
+          @apply text-[2.5rem];
+        }
+        p {
+          @apply w-[100%] px-[10%] justify-center ml-0;
+        }
+      }
+      .img-sobre {
+        @apply mt-5;
+        .Image-Sobre {
+          @apply w-[100%] px-[10%] mb-10;
+        }
+      }
     }
     .energias-container {
-        @apply flex-col items-center px-[10%];
-        .txt-energias {
-            @apply w-full text-left;
-            h2{
-                @apply text-[2.1rem] w-full text-center;
-            }
-            p {
-                @apply w-[100%] text-[1.2rem] text-left;
-                }
+      @apply flex-col items-center px-[10%];
+      .txt-energias {
+        @apply w-full text-left;
+        h2 {
+          @apply text-[2.1rem] w-full text-center;
         }
-        .card-energias {
-            @apply w-[100%] mt-5;
-            }
+        p {
+          @apply w-[100%] text-[1.2rem] text-left;
         }
-    
+      }
+      .card-energias {
+        @apply w-[100%] mt-5;
+      }
+    }
+
     .carbono-container {
-        .txt-carbono {
-            @apply w-full ;
-            .iti{
-                @apply w-0 text-center;
-            }
-            .caixa-carbono {
-                @apply w-full;
-            }
-            .img-cal {
-                @apply hidden;
-            }
-        .detalhes-carbono {
-                @apply w-full mt-5;
-                h2{
-                    @apply w-[80%] text-[1.8rem];
-                }
-                p{
-                    @apply w-[80%];
-                }
-            }
+      .txt-carbono {
+        @apply w-full;
+        .iti {
+          @apply w-0 text-center;
         }
+        .caixa-carbono {
+          @apply w-full;
+        }
+        .img-cal {
+          @apply hidden;
+        }
+        .detalhes-carbono {
+          @apply w-full mt-5;
+          h2 {
+            @apply w-[80%] text-[1.8rem];
+          }
+          p {
+            @apply w-[80%];
+          }
+        }
+      }
     }
     .areas-container-geral {
-        .title-areas {
-            @apply text-[2rem] justify-center;
+      .title-areas {
+        @apply text-[2rem] justify-center;
+      }
+      .container-areas {
+        @apply flex-col gap-4 justify-between w-full my-[2rem] h-full;
+
+        h3 {
+          @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
         }
-        .container-areas {
-            @apply flex-col gap-4 justify-between w-full my-[2rem] h-full;
-            
-            h3{
-                @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
-            }
-            
-            p
-            {
-                @apply text-left p-3 text-[#4C4A41] text-[1.3rem]
-            }
-            .card-areas{
-                @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[600px];
-                    .img-card{
-                        @apply h-[300px] w-full rounded-t-[10px];
-                    }
-                } 
-            }
+
+        p {
+          @apply text-left p-3 text-[#4C4A41] text-[1.3rem];
         }
-}
-@media (max-width: 578px) {
+        .card-areas {
+          @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[600px];
+          .img-card {
+            @apply h-[300px] w-full rounded-t-[10px];
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 578px) {
     .container-inicio {
-        @apply flex-col h-[70vh];
-        .txt-inicial {
-            @apply mx-[5%];
-            h2 {
-                @apply text-[2rem];
-                }
-            span {
-                @apply text-[1.5rem] p-[6px];
-            }
-            p {
-                @apply text-[1.5rem] mt-6 w-full;
-                }
+      @apply flex-col h-[70vh];
+      .txt-inicial {
+        @apply mx-[5%];
+        h2 {
+          @apply text-[2rem];
         }
-        .botao-home {
-            @apply mt-10 ;
-            h2{
-                @apply text-[1.5rem];
-            }
+        span {
+          @apply text-[1.5rem] p-[6px];
         }
+        p {
+          @apply text-[1.5rem] mt-6 w-full;
+        }
+      }
+      .botao-home {
+        @apply mt-10;
+        h2 {
+          @apply text-[1.5rem];
+        }
+      }
     }
     .txt-sobre {
-        @apply text-7xl;
+      @apply text-7xl;
     }
 
     .energias-container {
-        @apply flex-col items-center ;
-        .txt-energias {
-            @apply w-full text-left;
-            h2{
-                @apply text-[2rem] w-full text-left;
-            }
-            p {
-                @apply w-[100%] text-[1.2rem] text-left;
-                }
+      @apply flex-col items-center;
+      .txt-energias {
+        @apply w-full text-left;
+        h2 {
+          @apply text-[2rem] w-full text-left;
         }
-        .card-energias {
-            @apply w-[100%] mt-5 px-4;
-            }
+        p {
+          @apply w-[100%] text-[1.2rem] text-left;
         }
-        .carbono-container {
-            .txt-carbono {
-                @apply w-full ;
-                .iti{
-                    @apply w-0 text-center;
-                }
-                .caixa-carbono {
-                    @apply w-full;
-                }
-                .img-cal {
-                    @apply hidden;
-                }
-            .detalhes-carbono {
-                    @apply w-full mt-5;
-                    h2{
-                        @apply text-[2rem] w-full;
-                    }
-                    p{
-                        @apply w-full text-[1.2rem];
-                    }
-                }
-            }
+      }
+      .card-energias {
+        @apply w-[100%] mt-5 px-4;
+      }
+    }
+    .carbono-container {
+      .txt-carbono {
+        @apply w-full;
+        .iti {
+          @apply w-0 text-center;
         }
+        .caixa-carbono {
+          @apply w-full;
+        }
+        .img-cal {
+          @apply hidden;
+        }
+        .detalhes-carbono {
+          @apply w-full mt-5;
+          h2 {
+            @apply text-[2rem] w-full;
+          }
+          p {
+            @apply w-full text-[1.2rem];
+          }
+        }
+      }
+    }
 
     .areas-container-geral {
-        .title-areas {
-            @apply text-[2rem] justify-center;
+      .title-areas {
+        @apply text-[2rem] justify-center;
+      }
+      .container-areas {
+        @apply flex-col gap-4 justify-between w-full my-[2rem] h-full;
+
+        h3 {
+          @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
         }
-        .container-areas {
-            @apply flex-col gap-4 justify-between w-full my-[2rem] h-full;
-            
-            h3{
-                @apply text-[3rem] px-3 text-[#4C4A41] font-[500];
-            }
-            
-            p
-            {
-                @apply text-left p-3 text-[#4C4A41] text-[1.3rem]
-            }
-            .card-areas{
-                @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[800px];
-                    .img-card{
-                        @apply h-[300px] w-full rounded-t-[10px];
-                    }
-                } 
-            }
+
+        p {
+          @apply text-left p-3 text-[#4C4A41] text-[1.3rem];
         }
+        .card-areas {
+          @apply bg-white text-wrap rounded-t-[10px] w-full items-center h-[800px];
+          .img-card {
+            @apply h-[300px] w-full rounded-t-[10px];
+          }
+        }
+      }
     }
+    .card-areas {
+      .img-card h3 {
+        @apply text-[1rem];
+      }
+    }
+  }
 }
