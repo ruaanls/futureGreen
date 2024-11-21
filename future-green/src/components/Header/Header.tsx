@@ -57,7 +57,7 @@ export default function Header() {
           <>
             <p>Bem-vindo, {nome}</p>
             <button onClick={handleLogout} className="botao-logout">
-              Sair
+              <p>Sair</p>
             </button>
           </>
         ) : (

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import energiaCL from '@/../public/energiaCL.jpg';
 import { useRouter } from 'next/navigation';
 import { TipoCadastroEmpresa } from '@/types/types';
+import Link from 'next/link';
 export default function CadastroEmpresa() {
 
   const router = useRouter();
@@ -116,6 +117,7 @@ export default function CadastroEmpresa() {
               </div>
               <button type="submit">Cadastrar</button>
             </form>
+            <Link href="/cadastro" className='CadempresaButao'><p className='text-[1.4rem] mt-[2rem]'>Cadastro contas pessoais</p></Link>
           </div>
         </div>
       </div>
