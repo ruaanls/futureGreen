@@ -44,7 +44,7 @@ Dessa forma as APIs Java estarão funcionando normalmente.
 
 ### 2.*[Link da Vercel](https://future-green-rhkvmda4y-ruaanls-projects.vercel.app)*
 
-### 3.*[Link do Video](https://github.com/ruaanls/futureGreen)*
+### 3.*[Link do Video](https://www.youtube.com/watch?v=fndiq1WxfBU)*
 
 ### 4.*[Repositório projeto Java](https://github.com/ruaanls/CalculaCarbonoJava)*
 
