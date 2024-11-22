@@ -31,7 +31,7 @@ export default function Integrantes() {
                     <h2>rm - 558775</h2>
                     <div className="Socials">
                         <Link href={"https://github.com/ruaanls"} target="_blank"><VscGithub/></Link>
-                        <Link href={"https://github.com/ruaanls"} target="_blank"><FaLinkedin/></Link>
+                        <Link href={"https://www.linkedin.com/in/ruanls/"} target="_blank"><FaLinkedin/></Link>
                     </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@ export default function Integrantes() {
                     <h2>rm - 555413</h2>
                     <div className="Socials">
                         <Link href={"https://github.com/rickizzisj"} target="_blank"><VscGithub/></Link>
-                        <Link href={"https://github.com/rickizzisj"} target="_blank"><FaLinkedin/></Link>
+                        <Link href={"https://www.linkedin.com/in/henrique-izzi-1a286a259/"} target="_blank"><FaLinkedin/></Link>
                     </div>
                     </div>
                 </div>
