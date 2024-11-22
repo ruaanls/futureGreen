@@ -25,8 +25,8 @@ No nosso projeto usamos APIs Rest Java para realizar os processos de criação d
 Recomendamos que **utilize a IDE intelliJ** no lugar do VSCODE para realizar essa etapa
 
 - Abra a pasta **greenFuture** e siga o seguinte caminho:
--- src > main > java > br > com > fiap
--- RODE O ARQUIVO MAIN.JAVA
+- src > main > java > br > com > fiap
+- RODE O ARQUIVO MAIN.JAVA
 Dessa forma as APIs Java estarão funcionando normalmente.
 ---
 ## Tecnologias utilizadas
